@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+</head>
+     <style>
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Main heading styles
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;*/
+.head{
+    text-align: center;
+    background-color: rgba(57, 16, 16, 0.96);
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    color: antiquewhite;
+
+}
+.sub{
+    text-align: center;
+    background-color: rgba(57, 16, 16, 0.96);
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 150px 200px ;
+    padding: 20px;
+    margin-bottom: 10px;
+    color: antiquewhite;
+
+}
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.39);;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 30%; /* Adjust as needed */
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    display: inline-block;
+    width: 68%; /* Adjust as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(58, 16, 16, 0.96);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(19, 2, 2, 0.96);
+}
+
+
+/* Result styles */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p{
+    text-align: center;
+}
+.button1{
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    background-color: rgb(239, 187, 121);
+            display: inline-block;
+            padding: 10px 20px;
+            color: #000000;
+            text-decoration: none;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease-in-out;
+
+}
+.button2{
+    position: absolute;
+    right: 20px;
+    top: 24px;
+    background-color: rgb(239, 187, 121);
+            display: inline-block;
+            padding: 10px 20px;
+            color: #000000;
+            text-decoration: none;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease-in-out;
+
+}
+        .button1:hover {
+            background-color: rgb(86, 46, 3);
+        }
+                .button2:hover {
+            background-color: rgb(86, 46, 3);
+        }
+                        footer {
+            width: 100%;
+            background-color: rgba(66, 16, 16, 0.5);
+            text-align: center;
+            margin-top: auto;
+        }
+
+     </style>
+<body >
+<div class="head"><a class="button1" href="{{ url_for('home') }}">Return</a><h1>DELIVERY TIME PREDICTION</h1><a class="button2" href="{{ url_for('chatbot') }}">Dashboard</a></div><div class="sub"></div>
+    <div class="container">
+    <form action="{{ url_for('mental') }}" method="post">
+        <label for="feature1">Protocol</label>
+        <input type="number" id="feature1" name="feature1" placeholder="Enter the Details">
+        <label for="feature2">Total Items</label>
+        <input type="number" id="feature2" name="feature2" placeholder="Enter the Details">
+        <label for="feature3">Total Price</label>
+        <input type="number" id="feature3" name="feature3" placeholder="Enter the Details">
+        <label for="feature4">Types of Items</label>
+        <input type="number" id="feature4" name="feature4" placeholder="Enter the Details">
+        <label for="feature5">Total On-shift Partners</label>
+        <input type="number" id="feature5" name="feature5" placeholder="Enter the Details">
+        <label for="feature6">Total Busy Partners</label>
+        <input type="number" id="feature6" name="feature6" placeholder="Enter the Details">
+        <label for="feature7">Total Pending Orders</label>
+        <input type="number" id="feature7" name="feature7" placeholder="Enter the Details">
+        <label for="feature8">Active Partners</label>
+        <input type="number" id="feature8" name="feature8" placeholder="Enter the Details">
+
+        <button type="submit">Predict</button>
+    </form>
+    </div>
+    <h2>Estimated Time (In Minutes):</h2>
+    <p>{{ prediction  }} </p>
+
+
+</body>
+</html>
