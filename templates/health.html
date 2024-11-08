@@ -146,8 +146,9 @@ p{
 
      </style>
 <body >
-<div class="head"><a class="button1" href="{{ url_for('home') }}">Return</a><h1>DELIVERY TIME PREDICTIO</h1><a class="button2" href="{{ url_for('chatbot') }}">Dashboard</a></div><div class="sub"></div>
+<div class="head"><a class="button1" href="{{ url_for('home') }}">Return</a><h1>DELIVERY TIME PREDICTION</h1><a class="button2" href="{{ url_for('chatbot') }}">Dashboard</a></div><div class="sub"></div>
     <div class="container">
+        <span><h3>BMI CALCULATOR</h3></span>
     <form action="{{ url_for('health') }}" method="post">
         <label for="feature0">Height</label>
         <input type="number" id="feature0" name="feature0" placeholder="Enter in centimeters">
