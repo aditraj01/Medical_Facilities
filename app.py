@@ -62,6 +62,16 @@ def home():
 def health():
     return render_template('health.html')
 @app.route('/health', methods=['POST','GET'])
+def find_bmi():
+    weight = float(request.form.get('feature10'))
+    height = float(request.form.get('feature0'))
+    bmi = weight/((height/100)**2)
+    if bmi<=18.5:
+        return render_template('health.html',   BMI =round(bmi,2), Comment="Underweight")
+    elif bmi>18.5 and bmi<=25.0:
+        return render_template('health.html',   BMI =round(bmi,2), Comment="Normal")
+    else:
+        return render_template('health.html',  BMI =round(bmi,2), Comment="Overweight")
 def index_predict():
     features = [request.form.get('feature1'), request.form.get('feature2'), request.form.get('feature3'), request.form.get('feature4'), request.form.get('feature5'), request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8')]
     if '' in features:
