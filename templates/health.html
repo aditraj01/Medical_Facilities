@@ -149,6 +149,20 @@ p{
 <div class="head"><a class="button1" href="{{ url_for('home') }}">Return</a><h1>DELIVERY TIME PREDICTION</h1><a class="button2" href="{{ url_for('chatbot') }}">Dashboard</a></div><div class="sub"></div>
     <div class="container">
     <form action="{{ url_for('health') }}" method="post">
+        <label for="feature0">Height</label>
+        <input type="number" id="feature0" name="feature0" placeholder="Enter in centimeters">
+        <label for="feature10">Weight</label>
+        <input type="number" id="feature10" name="feature10" placeholder="Enter in kilograms">
+        <button type="submit">Find</button>
+    </form>
+    </div>
+    <h2>Your BMI is:</h2>
+    <p>{{ BMI  }} </p>
+    <p>{{ Comment }}</p>
+<BR>
+<BR>
+    <div class="container">
+    <form action="{{ url_for('health') }}" method="post">
         <label for="feature1">Protocol</label>
         <input type="number" id="feature1" name="feature1" placeholder="Enter the Details">
         <label for="feature2">Total Items</label>
