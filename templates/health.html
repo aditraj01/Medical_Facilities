@@ -149,37 +149,47 @@ p{
 <div class="head"><a class="button1" href="{{ url_for('home') }}">Return</a><h1>DELIVERY TIME PREDICTION</h1><a class="button2" href="{{ url_for('chatbot') }}">Dashboard</a></div><div class="sub"></div>
     <div class="container">
         <span><h3>BMI CALCULATOR</h3></span>
-    <form action="{{ url_for('health') }}" method="post">
-        <label for="feature0">Height</label>
-        <input type="number" id="feature0" name="feature0" placeholder="Enter in centimeters">
-        <label for="feature10">Weight</label>
-        <input type="number" id="feature10" name="feature10" placeholder="Enter in kilograms">
+    <form action="{{ url_for('bmi_health') }}" method="post">
+        <label for="height">Height</label>
+        <input type="number" id="height" name="height" placeholder="Enter in centimeters">
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter in kilograms">
         <button type="submit">Find</button>
     </form>
     </div>
-    <h2>Your BMI is:</h2>
+    <h2>
     <p>{{ BMI  }} </p>
-    <p>{{ Comment }}</p>
+        <p>{{ Comment }}</p></h2>
 <BR>
 <BR>
     <div class="container">
+         <span><h3>HEALTH MANAGER</h3></span>
+        <br>
     <form action="{{ url_for('health') }}" method="post">
-        <label for="feature1">Protocol</label>
+        <label for="feature1">Had Any Cholesterol Check In Last 5 Years? </label>
         <input type="number" id="feature1" name="feature1" placeholder="Enter the Details">
-        <label for="feature2">Total Items</label>
+        <label for="feature2">Any HyperTension or High Blood Pressure Recently?</label>
         <input type="number" id="feature2" name="feature2" placeholder="Enter the Details">
-        <label for="feature3">Total Price</label>
+        <label for="feature3">Fitness Activities For Past 4 Weeks?  </label>
         <input type="number" id="feature3" name="feature3" placeholder="Enter the Details">
-        <label for="feature4">Types of Items</label>
+        <label for="feature4">Your Body Mass Index</label>
         <input type="number" id="feature4" name="feature4" placeholder="Enter the Details">
-        <label for="feature5">Total On-shift Partners</label>
+        <label for="feature5">History Of High Cholesterol?</label>
         <input type="number" id="feature5" name="feature5" placeholder="Enter the Details">
-        <label for="feature6">Total Busy Partners</label>
+        <label for="feature6">Your Age</label>
         <input type="number" id="feature6" name="feature6" placeholder="Enter the Details">
-        <label for="feature7">Total Pending Orders</label>
+        <label for="feature7">Do You Eat Fruits Regularly?</label>
         <input type="number" id="feature7" name="feature7" placeholder="Enter the Details">
-        <label for="feature8">Active Partners</label>
+        <label for="feature8">Do You Face Difficulty In Walking?</label>
         <input type="number" id="feature8" name="feature8" placeholder="Enter the Details">
+        <label for="feature9">Any Heart Related Issues In Past?</label>
+        <input type="number" id="feature9" name="feature9" placeholder="Enter the Details">
+        <label for="feature10">Count Of Days Of Illness in Last 4 Weeks   </label>
+        <input type="number" id="feature10" name="feature10" placeholder="Enter the Details">
+        <label for="feature11">Frequent Smoker?</label>
+        <input type="number" id="feature11" name="feature11" placeholder="Enter the Details">
+        <label for="feature12">High Alcohol Consumption?</label>
+        <input type="number" id="feature12" name="feature12" placeholder="Enter the Details">
 
         <button type="submit">Predict</button>
     </form>
