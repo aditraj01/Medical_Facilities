@@ -1,16 +1,17 @@
 import nltk
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, url_for,jsonify
 import json
 import numpy as np
 from keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 import pickle
+from joblib import dump,load
 import random
 app = Flask(__name__, static_url_path='/static')
-with open('modelnew.pkl', 'rb') as file:
-    model1 = pickle.load(file)
-with open('scaler.pkl', 'rb') as file:
-    scaler = pickle.load(file)
+with open('modelhealth.joblib', 'rb') as file:
+    model1 = load(file)
+with open('scalerhealth.joblib', 'rb') as file:
+    scaler = load(file)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['DEBUG'] = True
 
@@ -45,11 +46,26 @@ def predict_class(sentence, model):
     return_list = [{"intent": classes[k[0]], "probability": str(k[1])} for k in results]
     return return_list
 
-def getResponse(ints, intents_json):
+
+'''def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     for i in intents_json['intents']:
         if i['tag'] == tag:
             return random.choice(i['responses'])
+'''
+def getResponse(ints, intents_json):
+    try:
+        tag = ints[0]['intent']
+        for i in intents_json['intents']:
+            if i['tag'] == tag:
+                response = random.choice(i['responses'])
+                treatment = random.choice(i['treatment']) if 'treatment' in i else ""
+                home_remedies = random.choice(i['home_remedies']) if 'home_remedies' in i else ""
+                response = response + treatment+home_remedies
+                return response
+    except IndexError:
+        return ("I'm sorry, I didn't get that. Please try again.")
+
 def chatbotResponse(msg):
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
@@ -58,25 +74,35 @@ def chatbotResponse(msg):
 @app.route('/')
 def home():
     return render_template('home.html')
+@app.route('/bmi_health')
+def bmi_health():
+    return render_template('health.html')
+@app.route('/bmi_health', methods=['POST','GET'])
+def find_bmi():
+    try:
+        weight = float(request.form.get('weight'))
+        height = float(request.form.get('height'))
+        bmi = weight/((height/100)**2)
+        if bmi<=18.5:
+            return render_template('health.html',   BMI =round(bmi,2), Comment="Underweight")
+        elif bmi>18.5 and bmi<=25.0:
+            return render_template('health.html',   BMI =round(bmi,2), Comment="Normal")
+        else:
+            return render_template('health.html',  BMI =round(bmi,2), Comment="Overweight")
+    except ValueError:
+        return render_template('health.html', error='Invalid input. Please enter numeric values.'), 400
+
+
+
 @app.route('/health')
 def health():
     return render_template('health.html')
 @app.route('/health', methods=['POST','GET'])
-def find_bmi():
-    weight = float(request.form.get('feature10'))
-    height = float(request.form.get('feature0'))
-    bmi = weight/((height/100)**2)
-    if bmi<=18.5:
-        return render_template('health.html',   BMI =round(bmi,2), Comment="Underweight")
-    elif bmi>18.5 and bmi<=25.0:
-        return render_template('health.html',   BMI =round(bmi,2), Comment="Normal")
-    else:
-        return render_template('health.html',  BMI =round(bmi,2), Comment="Overweight")
 def index_predict():
-    features = [request.form.get('feature1'), request.form.get('feature2'), request.form.get('feature3'), request.form.get('feature4'), request.form.get('feature5'), request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8')]
-    if '' in features:
-        return render_template('health.html', error='Please fill in all fields.')
     try:
+        features = [request.form.get('feature1'), request.form.get('feature2'), request.form.get('feature3'), request.form.get('feature4'), request.form.get('feature5'), request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8'), request.form.get('feature9'), request.form.get('feature10'), request.form.get('feature11'), request.form.get('feature12')]
+        if '' in features:
+            return render_template('health.html', error='Please fill in all fields.')
         features = [float(x) for x in features]
     except ValueError:
         return render_template('health.html', error='Invalid input. Please enter numeric values.')
