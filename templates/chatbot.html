@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
         .chat-container {
             width: 400px;
@@ -234,6 +235,48 @@
                 });
             });
         });
+         $(document).ready(function() {
+        // Send message on button click
+        $('#send').on('click', function(event) {
+            event.preventDefault();
+            sendMessage();
+        });
+
+        // Send message on Enter key press
+        $('#text').on('keydown', function(event) {
+            if (event.key === 'Enter' || event.which === 13) {
+                event.preventDefault(); // Prevent newline in input field
+                sendMessage();
+            }
+        });
+
+        // Function to handle sending messages
+        function sendMessage() {
+            const messageText = $('#text').val();
+            if (messageText.trim() === '') return; // Avoid sending empty messages
+
+            const userMessage = `<div class="msg user"><div class="bubble">${messageText}</div></div>`;
+            $('#messageArea').append(userMessage);
+            $('#text').val(''); // Clear input field
+
+            // Send AJAX request to backend
+            $.ajax({
+                type: 'POST',
+                url: '/get',
+                data: { msg: messageText },
+                success: function(response) {
+                    const botMessage = `<div class="msg bot"><div class="bubble">${response}</div></div>`;
+                    $('#messageArea').append(botMessage);
+                    $('#messageArea').scrollTop($('#messageArea')[0].scrollHeight);
+                },
+                error: function() {
+                    const errorMessage = `<div class="msg bot"><div class="bubble">Sorry, I couldn't process that.</div></div>`;
+                    $('#messageArea').append(errorMessage);
+                    $('#messageArea').scrollTop($('#messageArea')[0].scrollHeight);
+                }
+            });
+        }
+    });
     </script>
 </body>
 </html>
