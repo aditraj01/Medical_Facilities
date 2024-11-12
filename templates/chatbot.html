@@ -1,112 +1,239 @@
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Chatbot</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chatbot Interface</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
-        .user_info{
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            left: 1000px;
+            height: 100vh;
         }
-        .dark-theme {
-            background-color: rgb(241, 232, 255);
-            color: rgba(28, 2, 59, 0.91);
-            padding: 20px;
+        .chat-container {
+            width: 400px;
+            background: linear-gradient(145deg, #ffffff, #d4d7dd);
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px #bebebe, -15px -15px 30px #ffffff;
+            overflow: hidden;
+            z-index: 1;
         }
-        .card{
-            background-color: rgba(28, 2, 59, 0.91);
-            color: rgb(255, 255, 255);
-            padding: 20px;
-            background: linear-gradient(rgb(1, 0, 2), rgb(21, 0, 33));
-            box-shadow: 10px 10px 10px rgb(55, 1, 82);
+        .chat-header {
+            background: #ee253e;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
         }
-        .msg_cotainer{
-            background-color:#d30461 ;
-            border-radius: 10px;
+        .chat-header img {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+        .chat-body {
+            padding: 15px;
+            height: 350px;
+            overflow-y: auto;
+            background-color: #f0f2f5;
+        }
+        .msg {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .msg.bot {
+            justify-content: flex-start;
+        }
+        .msg.user {
+            justify-content: flex-end;
+        }
+        .msg .bubble {
+            max-width: 70%;
             padding: 10px;
-            box-shadow: 3px 3px 3px rgb(241, 232, 255);
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 0.9em;
+        }
+        .msg.bot .bubble {
+            background-color: #dfe1e6;
+            border-radius: 20px 20px 20px 5px;
+        }
+        .msg.user .bubble {
+            background: linear-gradient(145deg, #ff63fc, #e35194);
+            color: #090117;
+            border-radius: 20px 20px 5px 20px;
+        }
+        .chat-footer {
+            padding: 10px;
+            background-color: #f3efef;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chat-footer input {
+            border: none;
+            padding: 10px;
+            flex-grow: 1;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chat-footer button {
+            margin-left: 10px;
+            background-color: #ee253e;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .chat-footer button:hover {
+            background-color: #340101;
+        }
+         /* Header styling */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            background-color: #f0f0f0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
 
+        .title {
+            font-size: 35px;
+            font-family: "Agency FB";
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 5px;
+            text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #4ecdc4;
         }
-        .msg_cotainer_send{
-            background-color: #049cd3;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow:  -2px 2px 2px rgb(241, 232, 255);
+        .title a.no-style {
+        color: #333; /* Set link color to white */
+        text-decoration: none; /* Remove underline */
+    }
+       /* Button styling */
+.button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4ecdc4; /* Initial background color */
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 15px; /* Round corners */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+    position: absolute;
+    left: 20px; /* Positioning from the left */
+}
+
+/* Hover effect for the button */
+.button1:hover {
+    background-color: #3bb4ab;
+    text-decoration: none;/* Darker background on hover */
+}
+
+.button1:focus {
+    outline: none;
+}
+.button1:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Circle styling */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.7;
         }
+
+        .circle1 { width: 150px; height: 150px; background-color: teal; top: 110px; left: -30px; }
+        .circle2 { width: 150px; height: 150px; background-color: yellow; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .circle3 { width: 150px; height: 150px; background-color: red; top: 180px; right: -25px; }
+        .circle4 { width: 150px; height: 150px; background-color: blue; bottom: 110px; left: 30px; }
+        .circle5 { width: 100px; height: 100px; background-color: purple; top: 20px; right: 40px; }
+        .circle6 { width: 200px; height: 200px; background-color: orange; bottom: 50px; right: 100px; }
+        .circle7 { width: 120px; height: 120px; background-color: pink; top: 300px; left: 150px; }
+        .circle8 { width: 80px; height: 80px; background-color: green; bottom: 200px; left: 80px; }
+        .circle9 { width: 180px; height: 180px; background-color: cyan; top: 400px; right: 200px; }
+
+
     </style>
+</head>
+<body>
+    <header class="header">
+        <a class="button1" href="{{ url_for('home') }}" >Return</a>
+        <div class="title"><a href="{{ url_for('home') }}"  class="no-style">CoreBalance</a></div>
+    </header>
 
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="https://freesvg.org/img/1538298822.png" alt="Bot Avatar">
+            <span>JOLLY : The MediBot</span>
+        </div>
+        <div class="chat-body" id="messageArea">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="text" placeholder="Type your message...">
+            <button id="send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
-	<body class="dark-theme">
-		<div class="container-fluid h-100">
-			<div class="row justify-content-center h-100">
-				<div class="col-md-8 col-xl-6 chat">
-					<div class="card">
-						<div class="">
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" height="50" width="50" class="rounded-circle user_img">
-									<span class="online_icon"></span>
-								</div><center>
-								<div class="user_info">
-									<span> <h1>  MAVEN  </h1> </span>
-                                    <p><h6>Your AI agent for all solutions</h6></p>
-								</div><center>
-							</div>
-						</div>
-						<div id="messageFormeight" class="card-body msg_card_body">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+    <div class="circle circle6"></div>
+    <div class="circle circle7"></div>
+    <div class="circle circle8"></div>
+    <div class="circle circle9"></div>
 
+    <script>
+        $(document).ready(function() {
+            $('#send').on('click', function(event) {
+                event.preventDefault();
+                const messageText = $('#text').val();
+                if (messageText.trim() === '') return;
 
-						</div>
-						<div class="card-footer">
-							<form id="messageArea" class="input-group">
-                                <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="on" class="form-control type_msg" required/>
-								<div class="input-group-append">
-									<button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                const userMessage = `<div class="msg user"><div class="bubble">${messageText}</div></div>`;
+                $('#messageArea').append(userMessage);
+                $('#text').val('');
 
-		<script>
-			$(document).ready(function() {
-				$("#messageArea").on("submit", function(event) {
-					const date = new Date();
-					const hour = date.getHours();
-					const minute = date.getMinutes();
-					const str_time = hour+":"+minute;
-					var rawText = $("#text").val();
-
-					var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +  str_time  + '<br> <span class="msg_time_send">' +  rawText  +   '</span> </div><div class="img_cont_msg"> <img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" height="50" width="50" class="rounded-circle user_img_msg"></div></div>';
-
-					$("#text").val("");
-					$("#messageFormeight").append(userHtml);
-
-					$.ajax({
-						data: {
-							msg: rawText,
-						},
-						type: "POST",
-						url: "/get",
-					}).done(function(data) {
-						var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" height="50" width="50" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + str_time + '<br> <span class="msg_time">' + data +  '</span></div></div>';
-						$("#messageFormeight").append($.parseHTML(botHtml));
-					}).fail(function(jqXHR, textStatus, errorThrown) {
-    console.log("AJAX request failed:", textStatus, errorThrown);
-});
-					event.preventDefault();
-				});
-			});
-		</script>
-
-    </body>
+                $.ajax({
+                    type: 'POST',
+                    url: '/get',
+                    data: { msg: messageText },
+                    success: function(response) {
+                        const botMessage = `<div class="msg bot"><div class="bubble">${response}</div></div>`;
+                        $('#messageArea').append(botMessage);
+                        $('#messageArea').scrollTop($('#messageArea')[0].scrollHeight);
+                    },
+                    error: function() {
+                        const errorMessage = `<div class="msg bot"><div class="bubble">Sorry, I couldn't process that.</div></div>`;
+                        $('#messageArea').append(errorMessage);
+                        $('#messageArea').scrollTop($('#messageArea')[0].scrollHeight);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
