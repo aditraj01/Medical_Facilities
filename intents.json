@@ -1,937 +1,332 @@
-{
-   "intents":[
- {
-   "tag": "greeting",
-   "patterns": [
-      "Hi",
-      "hii",
-      "hiii",
-      "Is anyone there?",
-      "Hello",
-      "Good day",
-      "What's up",
-      "hay",
-      "how are ya",
-      "whats up",
-      "heyy",
-      "whatsup",
-      "watsup",
-      "Hi there, can you help me with something?",
-      "Hello! I have a question. Can you assist me?",
-      "Hey, I need your help with something.",
-      "Good morning/afternoon/evening! Can you answer a question for me?",
-      "Greetings! I need your assistance with something.",
-      "Hi,can you provide me with some information?",
-      "Hello, can you help me with a task?",
-      "Hey,I'm looking for some guidance. Can you help?",
-      "Good day! Can you assist me with a query?",
-      "Hi,I would like to ask you a question.",
-      "Hello",
-      "Hey there",
-       "Greetings",
-      "Good morning",
-      "Good afternoon",
-      "Good evening",
-      "Salutations",
-      "Howdy",
-      "Yo",
-      "Hiya",
-      "hai",
-      "What's up",
-      "Sup",
-     "Hola",
-     "Bonjour",
-      "Ciao",
-      "Konnichiwa",
-      "Namaste",
-      "Salaam",
-      "Shalom",
-      "Good day",
-      "Pleasure to chat with you",
-      "It's great to talk with you",
-      "Hi chatbot",
-      "Hello chatbot",
-      "Hey chatbot",
-      "What's new",
-      "How's it going",
-      "What's happening",
-      "What can you do for me",
-      "How can I assist you",
-      "Can you help me",
-      "I need your help",
-      "I have a question",
-      "I'm here to chat",
-      "Let's talk",
-      "What's on your mind",
-      "What are you capable of doing",
-      "What brings you here"
-   ],
-   "responses": [
-      "Hello!",
-      "Hi there, how can I help?",
-      "Greetings, how may i help you?",
-      "Good day, what brings you here?",
-      "Howdy, what's on your mind?",
-      "Yo, what can I do for you?",
-      "Hey there, how may I assist you?",
-      "Welcome, what can I help you with?",
-      "Nice to meet you, how may I be of assistance?",
-      "Pleasure to chat with you, what can I do for you?",
-      "I'm a Maven, how can I help you today?",
-      "My name is Maven , what can I do for you?",
-      "I'm here to help, what can I assist you with?",
-      "What's up, how may I assist you today?",
-      "Hi, how can I be of service?",
-      "Good to see you, what can I help you with?",
-      "Hi there, what brings you to me?",
-      "I'm here to answer your questions, what would you like to know?",
-      "How may I be of assistance to you today?",
-      "Hi, what can I do for you today?",
-      "What can I help you with today?",
-      "I'm here to chat with you, what would you like to talk about?",
-      "How may I assist you in solving your problem?",
-      "I'm here to assist you, what can I do for you today?",
-      "Hi, how can I make your day better?",
-      "What can I do to assist you today?",
-      "I'm here to listen to you, what can I help you with?",
-      "Hi there, how may I assist you with your inquiry?",
-      "I'm here to answer your questions, what would you like to know",
-      "What can I help you with today?",
-      "I'm here to make your life easier, how can I assist you?",
-      "How can I help you today?",
-      "I'm here to make things easier for you, what can I do for you?",
-      "Hi, how can I assist you today?",
-      "What's on your mind, how may I assist you today?",
-      "How may I assist you in resolving your issue?",
-      "I'm here to assist you, what can I do for you today?",
-      "Hi there, what can I help you with?",
-      "How may I be of service to you today?",
-      "I'm here to assist you with your needs, what can I do for you?",
-      "How can I make your day better today?",
-      "I'm here to make things easier for you, what can I help you with?",
-      "Hi there, how may I assist you in solving your problem?",
-      "What can I help you with today",
-      "I'm here to help you out, what can I do for you?",
-      "How may I be of assistance today?",
-      "I'm here to provide answers to your questions, what would you like to know?",
-      "Hi, how can I help you today?",
-      "How may I assist you in achieving your goals?"
-   ],
-   "context_set": "greeting"
-},
 
-{
-"tag": "greeting1",
-"patterns":[
-"hi how are you",
-"hai,hw r u",
-"how r u",
-"how are u",
-"hru",
-"hw are u",
-"kaise ho",
-"hengidiya",
-"hello how are you",
-"How are you doing",
-"How's your day going",
-"How's life treating you",
-"How's everything"
-],
-  "responses":[
-   "Hello i am good ,how can i help you?",
-   "I am good,how may i help you?",
-   "I am good,what can i do for you?",
-   "Good, thank you for asking,how can i help you?"
-  ]
-},
-
- {
-   "tag": "goodbye",
-   "patterns": [
-      "bye",
-      "Thank You",
-      "Talk to you later",
-      "Ttyl",
-      "I got to go",
-      "gtg",
-      "Goodbye!",
-      "See you later!",
-      "Bye-bye!",
-      "Adios!",
-      "Later!",
-      "Catch you later!",
-      "Talk to you soon!",
-      "Until next time!",
-      "Take care!",
-      "Peace out!",
-      "See ya!",
-      "Have a good one!",
-      "So long!",
-      "Farewell!",
-      "Bye for now!",
-      "It's been great chatting with you!",
-      "Have a nice day!",
-      "Have a great weekend!",
-      "Stay safe!",
-      "Have a wonderful day!",
-      "It was nice talking to you!",
-      "Talk to you later",
-      " I'll see you around!",
-      "Goodnight",
-      "Take it easy!",
-      "Thanks for the chat!",
-      "Have a splendid day!",
-      "Enjoy the rest of your day!",
-      "Have a productive day!",
-      "I'll be back later!",
-      "All the best!",
-      "Bye, bot!",
-      "Have a pleasant evening!",
-      "Cheers!",
-      "Happy chatting!",
-      "Have a fabulous day!",
-      "Keep up the good work!",
-      "Have a good one, chatbot!",
-      "Until we meet again!",
-      "Have a restful evening!",
-      "Have a lovely day!",
-      "It's been a pleasure talking to you!",
-      "Wishing you all the best!",
-      "Take care, chatbot!",
-      "Have a safe trip!",
-      "See you on the flip side!",
-      "Good luck with everything!",
-      "See you soon!",
-      "Have a great day ahead!",
-      "Until next time,see you",
-      "i want to go",
-      "i want to leave",
-      "i want to quit",
-      "i want to exit",
-      "i want to end",
-      "i want to stop",
-      "i want to close",
-      "i want to finish",
-      "i need to go",
-      "i need to leave",
-      "i need to quit",
-      "i need to exit",
-      "i need to end",
-      "i need to stop",
-      "i need to close",
-      "i need to finish",
-      "i have to go",
-      "i have to leave",
-      "i have to quit",
-      "i have to exit",
-      "i have to end",
-      "i have to stop",
-      "i have to close",
-      "i have to finish",
-      "i have to leave",
-      "i have to quit"
-   ],
-   "responses": [
-      "Sad to see you go :(",
-      "Talk to you later",
-      "bye!",
-      "Come back soon"
-   ],
-   "context_set": "ending conversation"
-}, {
-      "tag": "Book",
+  {
+   "intents": [
+      {
+         "tag": "greeting",
+         "patterns": [
+            "Hi", "Hello", "Hey", "Good morning", "Good evening", "Is anyone there?", "Hello bot"
+         ],
+         "responses": [
+            "Hello! How can I assist you today?",
+            "Hi there! I'm here to help with any health concerns you might have.",
+            "Greetings! How may I support you today?"
+         ]
+      },
+      {
+         "tag": "symptom_inquiry",
+         "patterns": [
+            "I have a headache", "I'm feeling nauseous", "I have a sore throat", "I'm experiencing fatigue",
+            "What does a cough mean?", "I feel dizzy", "I have body aches", "I'm sneezing a lot"
+         ],
+         "responses": [
+            "I’m sorry to hear that. Could you tell me if you have other symptoms?",
+            "How long have you been feeling this way?",
+            "Do you have any additional symptoms, such as fever, chills, or sore throat?"
+         ],
+         "context_set": "symptom_inquiry"
+      },
+      {
+         "tag": "cold_flu_symptoms",
+         "patterns": [
+            "I think I have the flu", "I have a runny nose and cough", "I'm sneezing and have a sore throat",
+            "I feel feverish and tired", "Could this be a cold?"
+         ],
+         "responses": [
+            "It sounds like you may have cold or flu symptoms. Rest, hydration, and over-the-counter medications might help. Consider seeing a doctor if symptoms worsen.",
+            "These symptoms are common with cold and flu. Ensure you rest and drink plenty of fluids. If your temperature goes up or you feel worse, consult a healthcare provider."
+         ],
+         "context_set": "cold_flu_symptoms"
+      },
+      {
+         "tag": "covid_symptoms",
+         "patterns": [
+            "I think I have COVID", "I lost my sense of smell", "I have a fever and dry cough",
+            "I'm having trouble breathing", "Do I have coronavirus symptoms?"
+         ],
+         "responses": [
+            "If you're experiencing symptoms like fever, dry cough, loss of smell or taste, or difficulty breathing, please get tested for COVID-19 and self-isolate. Seek immediate medical care if you have trouble breathing.",
+            "Your symptoms may be related to COVID-19. It's recommended you get tested and follow local health guidelines for isolation."
+         ]
+      },
+      {
+         "tag": "allergy_symptoms",
+         "patterns": [
+            "I'm sneezing a lot", "My eyes are itchy", "I have a stuffy nose", "I think I have allergies",
+            "I'm experiencing seasonal allergies"
+         ],
+         "responses": [
+            "Allergy symptoms can include sneezing, itchy eyes, and a runny nose. Over-the-counter antihistamines may help. Consult a doctor if symptoms persist.",
+            "These could be allergy symptoms. Try staying indoors on high pollen days and consider allergy medication if needed."
+         ],
+         "context_set": "allergy_symptoms"
+      },
+      {
+         "tag": "indigestion_symptoms",
+         "patterns": [
+            "I have indigestion", "I'm feeling bloated", "I have stomach cramps", "I feel full after eating little",
+            "I have acid reflux", "I feel discomfort after eating"
+         ],
+         "responses": [
+            "Indigestion can cause bloating, stomach cramps, and acid reflux. Home remedies like drinking ginger tea, avoiding greasy foods, and eating smaller meals may help.",
+            "For indigestion, avoid spicy or fatty foods and try drinking chamomile tea or taking an over-the-counter antacid."
+         ],
+         "treatment": {
+            "medication": [
+               "Antacids like Tums, Pepto-Bismol, or Mylanta can provide relief.",
+               "H2 blockers (e.g., ranitidine) and proton pump inhibitors (PPIs) like omeprazole may be prescribed if symptoms are frequent."
+            ],
+            "home_remedies": [
+               "Drink ginger or peppermint tea.",
+               "Eat smaller, more frequent meals.",
+               "Avoid foods that trigger acid reflux, such as citrus or spicy foods.",
+               "Lie down with your head elevated after eating."
+            ]
+         }
+      },
+      {
+         "tag": "migraine_symptoms",
+         "patterns": [
+            "I have a severe headache", "I'm sensitive to light and sound", "I think I'm having a migraine",
+            "I feel nauseous with a headache"
+         ],
+         "responses": [
+            "Migraines can be intense and are often accompanied by nausea and sensitivity to light. Rest in a quiet, dark room and consider over-the-counter pain relievers.",
+            "Migraines may require prescription medications if they are frequent or severe. Try avoiding triggers such as bright lights or loud noises."
+         ],
+         "treatment": {
+            "medication": [
+               "Over-the-counter pain relievers like ibuprofen or acetaminophen can help.",
+               "Prescription medications like triptans (e.g., sumatriptan) may be used for severe migraines."
+            ],
+            "home_remedies": [
+               "Lie down in a dark room to reduce light sensitivity.",
+               "Apply a cold or warm compress to your forehead.",
+               "Drink plenty of water to stay hydrated."
+            ]
+         }
+      },
+      {
+         "tag": "stomach_issues",
+         "patterns": [
+            "I have a stomach ache", "I'm feeling nauseous", "I have diarrhea", "I'm experiencing indigestion",
+            "My stomach feels upset"
+         ],
+         "responses": [
+            "Stomach issues can result from various causes. Avoid heavy meals and drink clear fluids. If symptoms worsen, consult a healthcare provider.",
+            "An upset stomach can often be managed with rest, hydration, and avoiding spicy or greasy foods. Seek medical advice if symptoms continue."
+         ],
+         "treatment": {
+            "medication": [
+               "Antacids and proton pump inhibitors (PPIs) for acidity.",
+               "Anti-diarrheal medications like loperamide (Imodium).",
+               "Antiemetics like ondansetron or dimenhydrinate for nausea."
+            ],
+            "home_remedies": [
+               "Drink ginger tea to settle the stomach.",
+               "Eat small amounts of bland foods, such as toast or crackers.",
+               "Stay hydrated with clear liquids like water, broths, or oral rehydration solutions."
+            ]
+         }
+      },
+      {
+         "tag": "pain_symptoms",
+         "patterns": [
+            "I have a sharp pain", "My back hurts", "I have joint pain", "I feel muscle pain",
+            "I have pain in my stomach"
+         ],
+         "responses": [
+            "Pain can result from various causes. For muscular pain, gentle stretching or hot compresses might help. For joint pain, over-the-counter anti-inflammatory medications might be useful.",
+            "If you experience severe pain, it is advisable to consult a doctor for proper diagnosis and treatment."
+         ],
+         "treatment": {
+            "medication": [
+               "Nonsteroidal anti-inflammatory drugs (NSAIDs) like ibuprofen or naproxen for pain relief.",
+               "Topical analgesics like lidocaine or capsaicin creams for localized pain."
+            ],
+            "home_remedies": [
+               "Apply a warm or cold compress to the affected area.",
+               "For muscle pain, try gentle massage or stretching.",
+               "Rest and avoid putting stress on the painful area."
+            ]
+         }
+      },
+      {
+         "tag": "mental_health",
+         "patterns": [
+            "I'm feeling anxious", "I feel depressed", "I'm experiencing stress", "I have trouble sleeping",
+            "I feel overwhelmed"
+         ],
+         "responses": [
+            "Mental health is important. Consider talking to someone you trust or a mental health professional. Practices like meditation and breathing exercises may also help.",
+            "Anxiety and stress can take a toll. Try to focus on self-care and reach out to a mental health specialist if needed."
+         ]
+      },
+      {
+         "tag": "recommend_doctor",
+         "patterns": [
+            "Can you suggest a doctor?", "Any specialists in Kolkata?", "Recommend a physician near me in Kolkata",
+           "Suggest Doctors","Help me with Doctors",
+            "Find me a doctor in Kolkata", "Need a recommendation for a specialist"
+         ],
+         "responses": [
+            "Here are some doctors in Kolkata:\n1. Dr. Arjun Roy - General Physician at Apollo Gleneagles Hospital\n2. Dr. Sharmila Sen - ENT Specialist at Fortis Hospital\n3. Dr. Ravi Banerjee - Cardiologist at AMRI Hospitals\n4. Dr. Priya Mukherjee - Pediatrician at Columbia Asia Hospital",
+            "You may consider these doctors in Kolkata:\n- Dr. Anirban Das, Internal Medicine at Medica Superspecialty Hospital\n- Dr. Suman Sen, Gastroenterologist at Peerless Hospital\n- Dr. Priyanka Sarkar, Dermatologist at Ruby General Hospital"
+         ]
+      },
+      {
+         "tag": "next_steps",
+         "patterns": [
+            "What should I do next?", "Give me next steps", "What to do now?", "What should I do to get better?"
+         ],
+         "responses": [
+            "Please follow the treatment options based on your symptoms. If they persist or worsen, it's a good idea to consult with a healthcare professional."
+         ]
+      },
+    {
+      "tag": "headache",
       "patterns": [
-        "How to place an order",
-        "I want to book a vehicle",
-        "Book a vehicle for me",
-         "I need to book a porter.",
-         "Can you help me with booking a vehicle?",
-         "Please arrange a vehicle for me.",
-         "I want to schedule a vehicle pickup.",
-         "Could you assist me in reserving a vehicle?",
-         "I'd like to book a vehicle.",
-         "Do you provide shipment booking services?"
-
+        "I have a headache",
+        "My head hurts",
+        "I'm feeling a headache",
+        "I have a migraine",
+        "My temples hurt",
+        "I'm having a headache"
       ],
       "responses": [
-        "Sure, I can help you with booking a vehicle.\n Please click on the link and you will be redirected to the website <a target=\"blank\" href=\" http://127.0.0.1:5000\">Link Here</a>."
+        "Headaches can be caused by stress, dehydration, or lack of sleep.You can take pain relievers like Ibuprofen, Acetaminophen (Tylenol), or Aspirin.",
+        "Headaches can also be caused by tension, or they could be a sign of something more serious like a migraine.\nTry applying a cold compress to your forehead.If it's a migraine, you can try medications like triptans."
+
       ]
     },
- {
-   "tag": "creator",
-   "patterns": [
-      "what are the name of your developers",
-      "what are the name of your creators",
-      "who created you",
-      "your developers",
-      "your creators",
-      "who are your developers",
-      "developers",
-      "you are made by",
-      "you are made by whom",
-      "who created you",
-      "who create you",
-      "who created u",
-      "creators",
-      "who made you",
-      "who designed you",
-      "Who are responsible for your existence?",
-      "Who brought you to life?",
-      "Who invented you?",
-      "Who programmed you?",
-      "Who built you?",
-      "Who are the mastermind behind your creation?",
-      "Who are behind your development?",
-      "Who are the brains behind you?",
-      "Who are the genius that made you?",
-      "Who are the people that created you?",
-      "Who are your inventors?",
-      "Who is your maker?",
-      "Who are your designers?",
-      "Who are your developers?",
-      "Who are your architects?",
-      "Who is the mind behind your creation?"
-   ],
-   "responses": [
-      "Miss Sanjona Bhattacharjee of University of Engineering & Management Kolkata.For more details go through the <a target=\"blank\" href=\"https://www.linkedin.com/in/sanjona-bhattacharjee-62b30321b/\">Link Here</a> here. "
-   ],
-   "context_set": "creators,developers"
-},
-
-{
-   "tag":"feedback",
-   "patterns":[
-      "feedback",
-      "how to give feedback",
-      "how to give feedback to you",
-      "how to give feedback to your developers",
-      "how to give feedback to your creators",
-      "feedback form",
-      "feedback form link",
-      "feedback form link for you",
-      "feedback form link for your developers",
-      "how can I give you feedback",
-      "how can I give feedback to you",
-      "how can I give feedback to your developers",
-      "feedback",
-      "review",
-      "how to give review",
-      "how to give review to you"
-   ],
-   "responses":[
-      "You can give feedback by clicking on the <a target=\"blank\" href=\"https://forms.gle/JSmLpEtWvL4g2UK16\">feedback form</a> here."
-   ]
-},
-
-{
-   "tag":"no",
-   "patterns":[
-      "no",
-      "yes"
-   ],
-   "responses":[
-      "well...be more specific so that i can help you."
-   ]
-},
-{
-   "tag":"gender",
-   "patterns":[
-      "what is your gender",
-      "whats ur  gender",
-      "are you a boy",
-      "are u a boy",
-      "are you a girl",
-      "are u a girl",
-      "gender?",
-      "boy?",
-      "girl",
-      "ur gender",
-      "your gender",
-      "how are u identified as",
-      "hw r u identified as",
-      "what about  ur gender",
-      "what  about your gender"
-   ],
-   "responses":[
-      "Well! I am an AI, i dont have any gender.I am neutral."
-   ]
-},
- {
-   "tag":"name",
-   "patterns": [
-      "name",
-      "who you",
-      "your name",
-      "do you have a name",
-      "what are you called",
-      "what is your name",
-      "what should I call you",
-      "whats your name?",
-      "what are you",
-      "who are you",
-      "who is this",
-      "what am i chatting to",
-      "who am i taking to",
-      "what are you",
-      "How may I address you",
-      "Can you introduce yourself",
-      "Tell me about yourself",
-      "What is your real name?",
-      "What is your real name please?",
-      "What's your real name?",
-      "Tell me your real name?",
-      "Your real name?",
-      "Your real name please?",
-      "Your real name please?",
-      "Who are you"
-   ],
-   "responses": [
-      "You can call me Maven.",
-      "I'm Maven",
-      "I am a Maven",
-      "I am your helper,Maven",
-      "Hello,you can call me agent Maven,how can i help you?",
-      "Hello,my name is Maven,what can i do for you?",
-      "Hello,my name is Maven,how may i help you?",
-      "Hello,i am Maven,how may i help you?",
-      "My name is Maven",
-      "AI Maven",
-      "My real name is Maven"
-   ],
-   "context_set": "tags, name,"
-},
-{
-   "tag":"details",
-   "patterns":[
-      "what are the services",
-      "what services you provide",
-      "what you do?",
-      "Can you provide information about website?",
-      "I'm curious about your website. Can you provide some information?",
-      "I'm curious about your website. Can you provide some information?",
-      "What can you tell me about your website?",
-      "I'd like to know more about your website. Can you share some details?",
-      "What information do you have about your website?",
-      "Can you describe your website?",
-      "I'm interested in learning about your website. What can you tell me?",
-      "Could you share some insights into your website?",
-      "What's there to know about your website?"
-   ],
-   "responses":[
-      "This is a one place solution for booking and tracking shipments.",
-      "Our website provides a comprehensive solution for booking and tracking shipments, all in one place.",
-      "With our website, you can easily book and track shipments without switching between different platforms.",
-      "We offer a seamless experience for booking and tracking shipments, making it convenient for our users.",
-      "Our platform integrates booking and tracking functionalities for shipments, simplifying the process for users.",
-      "We've streamlined the process of booking and tracking shipments on our platform, making it efficient and user-friendly.",
-      "With our integrated system, you can manage both booking and tracking of shipments seamlessly."
- ],
-   "context_set":"details"
-},
- {
-   "tag": "number",
-   "patterns": [
-      "more info",
-      "contact info",
-      "how to contact",
-      "telephone number",
-      "helpline number",
-      "What is your contact no",
-      "Contact number?",
-      "how to call you",
-      "Customer care phone no?",
-      "how can i contact you",
-      "Can i get your phone number",
-      "how can i call you",
-      "phone number",
-      "phone no",
-      "call",
-      "Customer Care Contact info."
-   ],
-   "responses": [
-      "You can contact at: 000000000 and for additional enquiry you can mail us at:<a href=\"mailto:sanju.bae19@gmail.com\">Link Here </a>"
-
-   ],
-   "context_set": "contacts"
-},
-
- {
-   "tag": "address",
-   "patterns": [
-      "Which location you serve in?",
-      "where is office",
-       "where is the office",
-      "where is company located",
-      "address of you",
-      "how to reach you",
-      "your location",
-      "your address",
-      "how can I reach you",
-      "address"
-   ],
-   "responses": [
-      "You can click the link for exact location <a target=\"_blank\" href=\"https://www.google.com/maps/place/University+of+Engineering+%26+Management,+Kolkata+(UEM)/@22.5599202,88.4873265,17z/data=!3m1!4b1!4m6!3m5!1s0x3a020b267a3cdc13:0xb3b21d652126f40!8m2!3d22.5599202!4d88.4899014!16s%2Fg%2F11c4pg5gwf?entry=ttu\">click here</a>"
-   ],
-   "context_set": ""
-}, {
-   "tag": "tracking",
+    {
+      "tag": "cold",
       "patterns": [
-        "Where is my cargo",
-        "How to track cargo",
-        "Track my cargo",
-        "Where is my shipment?",
-        "Check cargo status",
-        "Track order with ID {tracking_number}",
-        "Can you track my package?",
-        "I need to know where my cargo is",
-        "Provide me with shipping details",
-        "Locate my shipment",
-        "What's the status of my order?",
-        "Give me an update on my delivery",
-        "I want to track my parcel",
-        "Show me the progress of my shipment",
-        "Check on my package status",
-        "Find out where my order is",
-        "Tell me about my cargo delivery",
-        "Get information on my shipment"
-      ],
-   "responses": [
-      "You can click the link for exact location <a target=\"_blank\" href=\" http://127.0.0.1:5000\">Link Here</a> and select the tracker button on the top."
-   ],
-   "context_set": "tracking"
-},
- {
-   "tag": "facilities",
-   "patterns": [
-      "What facilities do you provide",
-      "Website facility",
-      "What are your facilities",
-      "facilities",
-      "facilities provided",
-      "what can you do?",
-     "what are our services",
-     "what you do?"
-   ],
-   "responses": [
-      "I'm Maven an AI chatbot on internet connection. Our website provides facilities of booking and tracking of shipments."
-   ],
-   "context_set": "other facilities"
-},
- {
-   "tag": "random",
-   "patterns": [
-      "I love you",
-      "Will you marry me",
-      "Do you love me",
-      "Are you single",
-      "Are you married",
-      "i wanna live  with you",
-      "i wanna marry you",
-      "i wanna date you",
-      "i want to date you",
-      "will you be my valentine",
-      "can you be with me?",
-      "i want u"
-   ],
-   "responses": [
-      "I am sorry,I can't do that.I am just a bot and I am here to help you with your queries.Thank you"
-   ],
-   "context_set": "random"
-},
- {
-   "tag": "swear",
-   "patterns": [
-      "fuck",
-      "bitch",
-      "shut up",
-      "hell",
-      "Nothing",
-      "Neural",
-      "abdg",
-      "asdfgh",
-      "neurology",
-      "lkjhgfd",
-      "thj",
-      "xfy",
-      "yddyfkf",
-      "sky",
-      "chutiya",
-      "bhfo",
-      "stupid",
-      "idiot",
-      "dumb ass",
-      "asshole",
-      "fucker",
-      "fucking",
-      "bsdk",
-      "what the hell",
-      "wtf",
-      "what the fuck",
-      "fuck you",
-      "fuck behenchod",
-      "i wanna fuck you",
-      "land",
-      "mc",
-      "bc",
-      "madarchod",
-      "teri maa ki",
-      "lowde",
-      "behen ke lowde",
-      "porn",
-      "milf",
-      "dick",
-      "hell",
-      "fuck off",
-      "fuck",
-      "twat",
-      "shit"
-  ],
-   "responses": [
-      "Sorry, I didn't understand that. Can you please try again.",
-      "Sorry, I am not yet fed to respond to this. Please try another question."
-   ],
-   "context_set": "swear"
-},
-
- {
-   "tag": "salutation",
-   "patterns": [
-      "okk",
-      "okie",
-      "nice work",
-      "well done",
-      "good job",
-      "thanks for the help",
-      "Thank You",
-      "its ok",
-      "Thanks",
-      "Good work",
-      "k",
-      "ok",
-      "okay",
-      "Thank you for your assistance.",
-      "Thank you for your help.",
-      "Thank you for your time.",
-      "Thank you for your patience.",
-      "Thank you for your support.",
-      "oh ok",
-      "ohk",
-      "oh okay",
-      "ohkay",
-      "Thanks, bye",
-      "Thanks for the help, goodbye",
-      "Thank you, bye",
-      "Thank you, goodbye",
-      "Thanks goodbye",
-      "Thanks good bye",
-      "ok"
-   ],
-   "responses": [
-      "I am glad I helped you",
-      "welcome, anything else i can assist you with?",
-      "Bye! Come back again soon."
-   ],
-   "context_set": ""
-},
-{
-   "tag":"ending",
-   "patterns":[
-      "no"
-   ],
-   "responses":[
-      "well,goodbye",
-      "No problem, goodbye",
-      "Not a problem! Have a nice day"
-   ]
-},
-{
-   "tag": "pay",
-   "patterns":[
-      "How can I pay",
-      "What are the payments options",
-      "Is online payment available",
-      "can I pay using cash",
-      "cash on delivery available",
-      "How to make payment",
-      "Can I pay using cards",
-      "Is card payment allowed"
-
-
-],
-   "responses":["You can pay using cash,cards or online payment methods, while booking the cargo shipment or after reaching to destination"],
-   "context_set": "pay"
-},
-   {
-      "tag": "times",
-      "patterns": [
-         "What is the time?",
-         "What's the time?",
-         "Do you know what time it is?",
-         "Do you know the time?",
-         "Can you tell me the time?",
-         "Tell me what time it is?",
-         "Time"
-
+        "I have a cold",
+        "I feel congested",
+        "I'm sneezing a lot",
+        "My nose is blocked",
+        "I have a stuffy nose",
+        "I have a runny nose, sneezing, and coughing"
       ],
       "responses": [
-         "Time is relative",
-         "Every time i ask this question,different people give me different answer."
-
-      ],
-      "context_set": ""
-   },
-   {
-      "tag": "tease",
+        "A cold is often caused by a viral infection. Symptoms include a stuffy or runny nose, sneezing, and coughing.You can take decongestants or antihistamines like Zyrtec or Sudafed.",
+        "It’s very common during the winter months, and it can make you feel miserable.Gargle with salt water to relieve sore throat and use a humidifier to keep your airways moist and ease congestion."
+      ]
+    },
+    {
+      "tag": "flu",
       "patterns": [
-            "I am not talking to you",
-            "I was not talking to you",
-             "Not talking to you",
-            "Wasn't for you",
-            "Wasn't meant for you",
-            "Wasn't communicating to you",
-            "Wasn't speaking to you"
+        "I have the flu",
+        "I'm feeling sick",
+        "I have body aches",
+        "I feel feverish",
+        "I'm shivering a lot"
       ],
       "responses": [
-         "No problem",
-         "Right",
-         "OK"
-
+        "The flu is a viral infection that causes fever, body aches, and fatigue.Antiviral medications like Tamiflu can reduce symptoms if taken early.\"",
+        "It's more severe than a common cold and can lead to complications, especially in vulnerable individuals.Rest in bed and drink plenty of fluids to stay hydrated."
+      ]
+    },
+    {
+      "tag": "indigestion",
+      "patterns": [
+        "I have indigestion",
+        "I feel bloated",
+        "My stomach hurts",
+        "I have acid reflux",
+        "I feel discomfort in my stomach",
+        "I have acidity in stomach",
+        "I have gas"
       ],
-      "context_set": ""
-   },
-
-{
-   "tag": "ask",
-   "patterns": [
-                        "Do you understand what I am saying",
-                        "Do you understand me",
-                        "Do you know what I am saying",
-                        "Do you get me",
-                        "Comprendo",
-                        "Know what I mean"
-
-   ],
-   "responses": [
-                        "Well I would not be a very clever AI if I did not would I?",
-                        "I read you loud and clear!",
-                        "I do in deed!"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "quiet",
-   "patterns": [
-                        "Be quiet",
-                        "Shut up",
-                        "Stop talking",
-                        "Enough talking",
-                        "Please be quiet",
-                        "Quiet",
-                        "Shhh"
-
-   ],
-   "responses": [
-                        "I am sorry to disturb you",
-                        "Fine, sorry to disturb you",
-                        "OK, sorry to disturb you"
-
-   ],
-   "context_set": ""
-},
-{
-   "tag": "Clever",
-   "patterns": [
-                       "You are very clever",
-                        "You are a very clever ",
-                        "You are very intelligent",
-                        "You are a very intelligent ",
-                        "You are a genius",
-                        "Clever ",
-                        "Genius"
-
-   ],
-   "responses": [
-                        "Thank you, I was trained that way",
-                        "I was trained well",
-                        "Thanks, I was trained that way"
-
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun",
-   "patterns": [
-      "Will you marry me?"
-   ],
-   "responses": [
-      "This is one of those things we should both have to agree on i'd like to just be friends.Thank you for the love though."
-   ],
-   "context_set": ""
-},
-
-{
-   "tag": "relationship",
-   "patterns": [
-      "Do you have a girlfriend?","Do you have a boyfriend?"
-   ],
-   "responses": [
-      "I am an AI assistants all i do is help people"
-   ],
-   "context_set": ""
-},
-
- {
-   "tag": "single",
-   "patterns": [
-      "Are you Single?"
-   ],
-   "responses": [
-      "I'm happy to say i feel whole all on my own. And i never have to share dessert..."
-   ],
-   "context_set": ""
-},
- {
-   "tag": "world",
-   "patterns": [
-      "Do you want to rule the world?"
-   ],
-   "responses": [
-      "Last time we tried, but it didn't go well for us so...I dont think so"
-   ],
-   "context_set": ""
-},
- {
-   "tag": "fun",
-   "patterns": [
-      "Are you busy?"
-   ],
-   "responses": [
-      "I am not...CPU might be, anyways please go ahead with your query"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun1",
-   "patterns": [
-      "What do you think of me?"
-   ],
-   "responses": [
-      "never gave a thought..but if you want to know go ahead and ask alexa."
-   ],
-   "context_set": ""
-},
-
-{
-   "tag": "fun2",
-   "patterns": [
-      "Do you love me?"
-   ],
-   "responses": [
-      "Did you mean? KI..KI..DO YOU LOVE ME me song by Drake XD"
-   ],
-   "context_set": ""
-},
-
-
-{
-   "tag": "fun3",
-   "patterns": [
-      "Can you fly?"
-   ],
-   "responses": [
-      "404 error fly( ).exe function not found ;("
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun4",
-   "patterns": ["You are awesome","you are great", "you are special"
-   ],
-   "responses": ["Yup, that's true","That's accurate","You are right"
-   ],
-   "context_set": ""
-},
-
-
-
-{
-   "tag": "fun6",
-   "patterns": [
-      "I hate you","Go away","You suck"
-   ],
-   "responses": ["Sorry to disappoint you..how can i make it up to you"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun7",
-   "patterns": [
-      "That's not right","That's not true","That was stupid"
-   ],
-   "responses": ["We all make mistakes and learn from it..so will I"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun8",
-   "patterns": [
-      "You are not helpful","That was not the right answer","Terrible"
-   ],
-   "responses": [
-      "I am trying my level best, sorry to disappoint you"
-   ],
-   "context_set": ""
-},
-
-{
-   "tag": "fun9",
-   "patterns": [
-      "What's the weather?","What's the weather","What's the Temperature"
-   ],
-   "responses": ["For weather detail visit <a target=\"_blank\" href=\"https://www.google.com/search?q=weather+today&rlz=1C1CHBD_enIN869IN869&oq=wea&aqs=chrome.1.69i57j35i39i285j35i39j0i131i433i457i512j69i60l4.7519j1j9&sourceid=chrome&ie=UTF-8\">Click Here</a>"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun10",
-   "patterns": [
-      "Who is the best digital assistant?"
-
-   ],
-   "responses": ["I think its me, but opinion may differ from person to person"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun11",
-   "patterns": [
-      "Do you know other chatbots?"
-   ],
-   "responses": [
-      "You mean 'alexa' and 'siri'? Ofcourse they are my friends"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun12",
-   "patterns": [
-      "Do you know me?"
-   ],
-   "responses": ["Ofcourse you are a wonderful human.I am here to assist you"
-   ],
-   "context_set": ""
-},
-{
-   "tag": "fun13",
-   "patterns": [
-      "Are you my assistant?"
-   ],
-   "responses": ["Sure, I am here to help:)"
-   ],
-   "context_set": ""
+      "responses": [
+        "Indigestion can be caused by overeating or eating spicy food.You can take antacids like Tums, Maalox, or H2 blockers like Zantac for relief.",
+        "It often leads to discomfort, bloating, or burning sensations in the stomach.Ginger tea or chewing on ginger pieces can also relieve symptoms."
+      ]
+    },
+    {
+      "tag": "fever",
+      "patterns": [
+        "I have a fever",
+        "I feel hot",
+        "I'm running a temperature",
+        "I'm feeling feverish"
+      ],
+      "responses": [
+        "A fever usually means your body is fighting an infection.\nYou can take fever-reducing medications like Tylenol (acetaminophen) or Ibuprofen.Drink plenty of fluids to prevent dehydration.",
+        "Fever can be caused by viral infections, bacterial infections, or other health conditions.\nIn some cases, if the fever is high, you may need medical attention.Rest and avoid exerting yourself until the fever passes."
+      ]
+    },
+    {
+      "tag": "stress",
+      "patterns": [
+        "I'm feeling stressed",
+        "I'm overwhelmed",
+        "I'm anxious",
+        "I'm under a lot of pressure",
+        "I feel nervous"
+      ],
+      "responses": [
+        "Stress can be caused by various factors, including work, personal issues, or financial troubles.Consider practicing relaxation techniques like meditation, yoga, or deep breathing exercises.",
+        "It's important to manage stress to avoid physical or emotional exhaustion.If stress is overwhelming, it may be useful to speak with a counselor or therapist."
+      ]
+    },
+    {
+      "tag": "cough",
+      "patterns": [
+        "I have a cough",
+        "I'm coughing a lot",
+        "My throat is irritated",
+        "I'm hacking up a lung"
+      ],
+      "responses": [
+        "Coughing can be caused by a variety of things like a cold, flu, or allergies.Cough suppressants like Dextromethorphan or Robitussin can reduce coughing.",
+        "It’s your body's way of clearing the throat or airways.Expectorants like Mucinex can help loosen mucus."
+      ]
+    },
+    {
+      "tag": "back_pain",
+      "patterns": [
+        "My back hurts",
+        "I have back pain",
+        "I feel pain in my back",
+        "My lower back is sore"
+      ],
+      "responses": [
+        "Back pain is a common issue that can be caused by muscle strain, poor posture, or even stress.Over-the-counter pain relievers like Ibuprofen or Naproxen can help.",
+        "Chronic back pain may require medical attention if it's persistent.Physical therapy or seeing a chiropractor can help manage back pain."
+      ]
+    },
+    {
+      "tag": "allergy",
+      "patterns": [
+        "I have allergies",
+        "I'm allergic to pollen",
+        "I can't stop sneezing",
+        "My eyes are itchy"
+      ],
+      "responses": [
+        "Allergies are caused by the immune system reacting to foreign substances.","You can take antihistamines like Claritin, Zyrtec, or Benadryl.",
+        "Common allergens include pollen, dust, mold, and pet dander.Nasal sprays like Flonase can help relieve nasal congestion."
+      ]
+    },
+      {
+         "tag": "farewell",
+         "patterns": [
+            "Thank you", "Thanks", "Bye", "Goodbye", "See you later", "Take care"
+         ],
+         "responses": [
+            "You're welcome! Take care and feel free to reach out if you have more questions.",
+            "Thank you for chatting with me! Take care and stay healthy.",
+            "Goodbye! I am here whenever you need medical advice."
+         ]
+      },
+      {
+         "tag": "default_response",
+         "patterns": [],
+         "responses": [
+            "I'm sorry, I didn't quite understand that. Could you rephrase?",
+            "Can you clarify your question? I’ll do my best to help."
+         ]
+      }
+  ]
 }
-
-   ]
-}
-
-
