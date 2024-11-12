@@ -1,12 +1,484 @@
+<!-- employee -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Yes</title>
+    <style>
+          /* Reset */
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body, html {
+            overflow: hidden;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Header styling */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #f0f0f0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #4ecdc4;
+        }
+
+        /* Circle styling */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        .circle1 { width: 150px; height: 150px; background-color: teal; top: 110px; left: -30px; }
+        .circle2 { width: 150px; height: 150px; background-color: yellow; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .circle3 { width: 150px; height: 150px; background-color: red; top: 180px; right: -25px; }
+        .circle4 { width: 150px; height: 150px; background-color: blue; bottom: 110px; left: 30px; }
+        .circle5 { width: 100px; height: 100px; background-color: purple; top: 20px; right: 40px; }
+        .circle6 { width: 200px; height: 200px; background-color: orange; bottom: 50px; right: 100px; }
+        .circle7 { width: 120px; height: 120px; background-color: pink; top: 300px; left: 150px; }
+        .circle8 { width: 80px; height: 80px; background-color: green; bottom: 200px; left: 80px; }
+        .circle9 { width: 180px; height: 180px; background-color: cyan; top: 400px; right: 200px; }
+
+        /* Main tagline */
+        .main-tagline {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Form container */
+        .container {
+            max-width: 600px;
+            margin: 100px auto 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Form styles */
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 33%;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #495057;
+            text-align: left;
+        }
+
+        input[type="number"], input[type="radio"] {
+            display: inline-block;
+            width: 66%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        .radio-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .radio-options label {
+            width: 45%;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3bb4ab;
+        }
+
+        .button1, .button2 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4ecdc4;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button1:hover, .button2:hover {
+            background-color: #3bb4ab;
+        }
+
+        .button1 {
+            position: absolute;
+            left: 20px;
+        }
+
+        .card {
+            width: 70%;
+            margin: 100px auto 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button2 {
+            position: absolute;
+            right: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #495057;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .footer img {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #3bb4ab;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .radio-options label input[type="radio"]{
+            max-width: 15px;
+        }
+
+    </style>
 </head>
 <body>
+    <header class="header">
+        <a class="button1" href="{{ url_for('home') }}">Return</a>
+        <h1 class="title">Results</h1>
+    </header>
+<div class="result-container">
+</div>
+    {#  <div class="container">
+        <h1>Time for Some TLC</h1>
+<p>We've noticed some patterns that need attention. Your stress levels are higher than ideal, and some health indicators suggest you could use more self-care.</p>
 
-    <h2>Estimated Timemmm (In Minutes):</h2>
-    <p>{{ predictionnew  }} </p>
+<h3>Key Areas to Focus On:</h3>
+<br>
+
+<ul style="text-align: left; list-style-position: inside;">
+    <li>Stress levels are elevated</li>
+    <li>Sleep patterns could be more consistent</li>
+    <li>Work-life balance needs adjustment</li>
+    <li>Energy levels are fluctuating</li>
+</ul>
+
+<p>Don't worry - we're here to help!</p>
+    </div>
+
+    <div class="container">
+        <h1>Quick Wins for Better Mental Health✨</h1>
+        <h2>Reminders :</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>Take regular breaks (Try the 52/17 rule - 52 min work, 17 min break)</li>
+            <li>Exercise for 30 minutes daily</li>
+            <li>Stay hydrated</li>
+            <li>Practice deep breathing (4-7-8 technique)</li>
+            <li>Get 7-8 hours of sleep</li>
+        </ul>
+        <h2>Hidden Gems:</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+        <li>The '3-3-3 rule': Name 3 things you see, hear, and can touch</li>
+        <li>Humming or singing to activate your vagus nerve</li>
+        <li>Desktop organization as meditation</li>
+        <li>Morning sun exposure for 10-15 minutes</li>
+        <li>Color therapy: Spend time in blue/green spaces for calm</li>
+        <li>'Box breathing' at your desk (4 seconds each: inhale, hold, exhale, hold)</li>
+        <li>Progressive muscle relaxation during work calls</li>
+
+    </ul>
+    <h2>Simple Health Boosters 🌿</h2>
+    <br>
+    <h3>Reminding Daily Habits:</h3>
+    <br>
+    <ul style="text-align: left; list-style-position: inside;">
+    <li>Eat more whole foods</li>
+    <li>Limit screen time</li>
+    <li>Stay social</li>
+    <li>Take walking meetings</li>
+    <li>Stretch regularly</li>
+
+
+
+    <h2>Smart Daily Choices 💫</h2>
+    <ul style="text-align: left; list-style-position: inside;">
+        <li>Alternate nostril breathing for energy</li>
+        <li>Stand on one leg while brushing teeth for balance</li>
+        <li>"Kitchen dancing" while cooking</li>
+        <li>Cold shower for 30 seconds (start warm!)</li>
+        <li>Phone calls while walking</li>
+        <li>Squeeze stress ball during meetings</li>
+        <li>Desk exercises: ankle rotations, seated cat-cow stretches</li>
+</ul>
+<br>
+<h2>Remember 🌱<br>
+    Small steps lead to big changes. Pick one or two tips to start with and build from there. You've got this, and we're here to support your journey!</h2>
+    <br>
+
+<p>Want personalized suggestions? Chat with our wellness buddy! 🤖 </p><br>
+
+    </div>#}
+
+
+    <footer class="footer">
+        <a href="{{ url_for('chatbot') }}"><img src="https://freesvg.org/img/1538298822.png" alt="chatbot"></a>
+    </footer>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+    <div class="circle circle6"></div>
+    <div class="circle circle7"></div>
+    <div class="circle circle8"></div>
+    <div class="circle circle9"></div>
+
 </body>
+<script>
+    // Fetch the prediction value from the server-side templating
+    const prediction = "{{ predictionnew }}";
+
+    // Define separate functions for each scenario
+    function showYesResult() {
+        // Logic for when prediction is "Yes"
+        document.querySelector('.result-container').innerHTML = `
+                    <div class="container">
+        <h1>You're Doing Great!</h1>
+<p>Fantastic news! Your wellness indicators are in the healthy zone. Your stress levels are manageable, and your health patterns show good balance.</p>
+
+<h3>What's Working Well:</h3>
+<br>
+
+<ul style="text-align: left; list-style-position: inside;">
+    <li>Your sleep rhythm is steady</li>
+    <li>Stress levels are within healthy limits</li>
+    <li>Work-life balance looks good</li>
+    <li>Energy levels are stable</li>
+</ul>
+
+<p>Keep up these great habits! </p>
+    </div>
+
+    <div class="container">
+        <h1>Quick Health Boosters </h1>
+        <h2>Reminders :</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>Take regular breaks (Try the 52/17 rule - 52 min work, 17 min break)</li>
+            <li>Exercise for 30 minutes daily</li>
+            <li>Stay hydrated</li>
+        </ul>
+        <h2>Hidden Gems:</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+        <li>The '3-3-3 rule': Name 3 things you see, hear, and can touch</li>
+        <li>Humming or singing to activate your vagus nerve</li>
+        <li>Desktop organization as meditation</li>
+        <li>Morning sun exposure for 10-15 minutes</li>
+
+    </ul>
+    <h2>Simple Health Boosters </h2>
+    <br>
+    <h3>Reminding Daily Habits:</h3>
+    <br>
+    <ul style="text-align: left; list-style-position: inside;">
+    <li>Eat more whole foods</li>
+    <li>Limit screen time</li>
+    <li>Stay social</li>
+
+
+
+    <h2>Smart Daily Choices </h2>
+    <ul style="text-align: left; list-style-position: inside;">
+        <li>Alternate nostril breathing for energy</li>
+        <li>Stand on one leg while brushing teeth for balance</li>
+        <li>"Kitchen dancing" while cooking</li>
+        <li>Cold shower for 30 seconds (start warm!)</li>
+        <li>Phone calls while walking</li>
+        <li>Squeeze stress ball during meetings</li>
+</ul>
+<br>
+<h2>Remember <br>
+    Small steps lead to big changes. Pick one or two tips to start with and build from there. You've got this, and we're here to support your journey!</h2>
+    <br>
+
+<p>Want personalized suggestions? Chat with our wellness buddy!  </p><br>
+
+    </div>
+`;
+    }
+
+    function showNoResult() {
+        // Logic for when prediction is "No"
+        document.querySelector('.result-container').innerHTML = `
+                    <div class="container">
+        <h1>Time for Some TLC</h1>
+<p>We've noticed some patterns that need attention. Your stress levels are higher than ideal, and some health indicators suggest you could use more self-care.</p>
+
+<h3>Key Areas to Focus On:</h3>
+<br>
+
+<ul style="text-align: left; list-style-position: inside;">
+    <li>Stress levels are elevated</li>
+    <li>Sleep patterns could be more consistent</li>
+    <li>Work-life balance needs adjustment</li>
+    <li>Energy levels are fluctuating</li>
+</ul>
+
+<p>Don't worry - we're here to help!</p>
+    </div>
+
+    <div class="container">
+        <h1>Quick Wins for Better Mental Health</h1>
+        <h2>Reminders :</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>Take regular breaks (Try the 52/17 rule - 52 min work, 17 min break)</li>
+            <li>Exercise for 30 minutes daily</li>
+            <li>Stay hydrated</li>
+            <li>Practice deep breathing (4-7-8 technique)</li>
+            <li>Get 7-8 hours of sleep</li>
+        </ul>
+        <h2>Hidden Gems:</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+        <li>The '3-3-3 rule': Name 3 things you see, hear, and can touch</li>
+        <li>Humming or singing to activate your vagus nerve</li>
+        <li>Desktop organization as meditation</li>
+        <li>Morning sun exposure for 10-15 minutes</li>
+        <li>Color therapy: Spend time in blue/green spaces for calm</li>
+        <li>'Box breathing' at your desk (4 seconds each: inhale, hold, exhale, hold)</li>
+        <li>Progressive muscle relaxation during work calls</li>
+
+    </ul>
+    <h2>Simple Health Boosters </h2>
+    <br>
+    <h3>Reminding Daily Habits:</h3>
+    <br>
+    <ul style="text-align: left; list-style-position: inside;">
+    <li>Eat more whole foods</li>
+    <li>Limit screen time</li>
+    <li>Stay social</li>
+    <li>Take walking meetings</li>
+    <li>Stretch regularly</li>
+
+
+
+    <h2>Smart Daily Choices </h2>
+    <ul style="text-align: left; list-style-position: inside;">
+        <li>Alternate nostril breathing for energy</li>
+        <li>Stand on one leg while brushing teeth for balance</li>
+        <li>"Kitchen dancing" while cooking</li>
+        <li>Cold shower for 30 seconds (start warm!)</li>
+        <li>Phone calls while walking</li>
+        <li>Squeeze stress ball during meetings</li>
+        <li>Desk exercises: ankle rotations, seated cat-cow stretches</li>
+</ul>
+<br>
+<h2>Remember <br>
+    Small steps lead to big changes. Pick one or two tips to start with and build from there. You've got this, and we're here to support your journey!</h2>
+    <br>
+
+<p>Want personalized suggestions? Chat with our wellness buddy! </p><br>
+
+    </div>
+
+        `;
+    }
+
+    // Check prediction and execute the appropriate function
+    if (prediction.toLowerCase() === "yes") {
+        showYesResult();
+    } else if (prediction.toLowerCase() === "no") {
+        showNoResult();
+    } else {
+        // Optional: handle unexpected values
+        console.warn("Unexpected prediction value:", prediction);
+    }
+</script>
+
 </html>
