@@ -12,6 +12,10 @@ with open('modelhealth.joblib', 'rb') as file:
     model1 = load(file)
 with open('scalerhealth.joblib', 'rb') as file:
     scaler = load(file)
+with open('modelmental.joblib', 'rb') as file:
+    modelmental = load(file)
+with open('encodermental.joblib', 'rb') as file:
+    encoder = load(file)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['DEBUG'] = True
 
@@ -97,33 +101,68 @@ def find_bmi():
 @app.route('/health')
 def health():
     return render_template('health.html')
-@app.route('/health', methods=['POST','GET'])
+
+
+@app.route('/health', methods=['POST', 'GET'])
 def index_predict():
     try:
-        features = [request.form.get('feature1'), request.form.get('feature2'), request.form.get('feature3'), request.form.get('feature4'), request.form.get('feature5'), request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8'), request.form.get('feature9'), request.form.get('feature10'), request.form.get('feature11'), request.form.get('feature12')]
+        features = [
+            request.form.get('feature1'), request.form.get('feature2'),
+            request.form.get('feature3'), request.form.get('feature4'),
+            request.form.get('feature5'), request.form.get('feature6'),
+            request.form.get('feature7'), request.form.get('feature8'),
+            request.form.get('feature9'), request.form.get('feature10'),
+            request.form.get('feature11'), request.form.get('feature12')
+        ]
         if '' in features:
             return render_template('health.html', error='Please fill in all fields.')
+
         features = [float(x) for x in features]
     except ValueError:
         return render_template('health.html', error='Invalid input. Please enter numeric values.')
+
     input_data = np.array([features])
-    prediction = model1.predict(scaler.transform(input_data))
-    return render_template('result1.html', prediction=prediction[0])
+
+    try:
+        prediction = model1.predict(scaler.transform(input_data))  # Assuming model1 and scaler are initialized
+        predicted_value = int(prediction[0])  # Get predicted result
+    except Exception as e:
+        return render_template('health.html', error=f'Error during prediction: {str(e)}')
+
+    if predicted_value == 0:
+        print(predicted_value)
+        return render_template('result1.html', prediction1="Yes")
+    else:
+        print(predicted_value)
+        return render_template('result1.html', prediction1="No")
+
 @app.route('/mental')
 def mental():
     return render_template('mental.html')
 @app.route('/mental', methods=['POST','GET'])
 def new_predict():
-    features = [request.form.get('feature1'), request.form.get('feature2'), request.form.get('feature3'), request.form.get('feature4'), request.form.get('feature5'), request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8')]
-    if '' in features:
-        return render_template('mental.html', error='Please fill in all fields.')
     try:
-        features = [float(x) for x in features]
+        features = [request.form.get('feature0'), request.form.get('feature1'), request.form.get('feature2'),
+                    request.form.get('feature3'), request.form.get('feature5'),
+                    request.form.get('feature6'), request.form.get('feature7'), request.form.get('feature8'),
+                    request.form.get('feature9'), request.form.get('feature10'), request.form.get('feature11'),
+                    request.form.get('feature12'), request.form.get('feature13'), request.form.get('feature14'),
+                    request.form.get('feature15'), request.form.get('feature16'), request.form.get('feature17'),
+                    request.form.get('feature18'), request.form.get('feature19'), request.form.get('feature20'),
+                    request.form.get('feature21'), request.form.get('feature22')]
+        if '' in features:
+            return render_template('mental.html', error='Please fill in all fields.')
+        print(features)
+        features = [int(x) for x in features]
     except ValueError:
         return render_template('mental.html', error='Invalid input. Please enter numeric values.')
     input_data = np.array([features])
-    prediction = model1.predict(scaler.transform(input_data))
-    return render_template('result2.html', predictionnew=prediction[0])
+    print(input_data)
+    prediction = modelmental.predict(input_data)
+    if prediction==1:
+        return render_template('result2.html', predictionnew="No")
+    else:
+        return render_template('result2.html', predictionnew="Yes")
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html')
