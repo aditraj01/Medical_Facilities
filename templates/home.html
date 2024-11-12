@@ -29,18 +29,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 10px;
             background-color: #f0f0f0;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .title {
-            font-size: 25px;
+            font-size: 40px;
+            font-family: "Agency FB";
             font-weight: bold;
             color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
             text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.3);
             border-bottom: 3px solid #4ecdc4;
         }
@@ -166,7 +166,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="title">[Website Name]</div>
+        <div class="title">CoreBalance</div>
     </header>
 
     <!-- Main Tagline -->
@@ -176,40 +176,41 @@
     <section class="card-container">
         <div class="card">
             <div class="card-title">Chatbot</div>
-            <div class="card-description">Get on a 1:1 with our chatbot: JOLLY:The Medibot.</div>
-            <a href="{{ url_for('chatbot') }}" class="button">Go to Chatbot</a>
+            <div class="card-description">Get on a 1:1 with our medical chatbot for personal feedback and symptoms detection. </div>
+            <a href="{{ url_for('chatbot') }}" class="button"> ChatBot</a>
         </div>
         <div class="card">
             <div class="card-title">Employee</div>
             <div class="card-description">We know you do a great job at work! Let's find out if your body does too.</div>
-            <a href="{{ url_for('health') }}" class="button">Go to Employee</a>
+            <a href="{{ url_for('health') }}" class="button">Know Your Health</a>
         </div>
         <div class="card">
             <div class="card-title">Employer</div>
             <div class="card-description">Got too many people working with you? Don't worry we can help you here as well!</div>
-            <a href="{{ url_for('mental') }}" class="button">Go to Employer</a>
+            <a href="{{ url_for('mental') }}" class="button">Wellness Center</a>
         </div>
     </section>
 
     <!-- Content Description -->
     <div class="content-description">
-        Transform your approach to wellness with [Website Name] - where advanced AI meets personalized healthcare. Understand your mental and physical health patterns before they become concerns.
+        Transform your approach to wellness with CoreBalance - where advanced AI meets personalized healthcare. Understand your mental and physical health patterns before they become concerns.
     </div>
 
     <!-- Key Benefits -->
     <div class="benefits">
-        Key Benefits:
+        <h3><b>KEY BENEFITS</b></h3>
         <ul>
+            <li>Take control of your wellness journey</li>
             <li>Get ahead of health issues with predictive analytics</li>
             <li>Track your mental wellbeing through smart monitoring</li>
             <li>Receive personalized health insights backed by science</li>
-            <li>Take control of your wellness journey</li>
+
         </ul>
     </div>
 
     <!-- Our Message -->
     <div class="message">
-        "We believe prevention is better than cure. Our AI-powered platform analyzes your health patterns to predict potential concerns, helping you make informed decisions about your physical and mental wellbeing."
+        "We believe prevention is better than cure. Our AI-powered platform analyzes your health patterns to predict potential concerns, helping you make informed decisions about your physical and mental well-being."
     </div>
 
     <!-- Decorative Circles -->
@@ -222,6 +223,7 @@
     <div class="circle circle7"></div>
     <div class="circle circle8"></div>
     <div class="circle circle9"></div>
+
 
 </body>
 </html>
