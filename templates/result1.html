@@ -1,12 +1,473 @@
+<!-- employee -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Yes</title>
+    <style>
+          /* Reset */
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body, html {
+            overflow: hidden;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Header styling */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #f0f0f0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #4ecdc4;
+        }
+
+        /* Circle styling */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        .circle1 { width: 150px; height: 150px; background-color: teal; top: 110px; left: -30px; }
+        .circle2 { width: 150px; height: 150px; background-color: yellow; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .circle3 { width: 150px; height: 150px; background-color: red; top: 180px; right: -25px; }
+        .circle4 { width: 150px; height: 150px; background-color: blue; bottom: 110px; left: 30px; }
+        .circle5 { width: 100px; height: 100px; background-color: purple; top: 20px; right: 40px; }
+        .circle6 { width: 200px; height: 200px; background-color: orange; bottom: 50px; right: 100px; }
+        .circle7 { width: 120px; height: 120px; background-color: pink; top: 300px; left: 150px; }
+        .circle8 { width: 80px; height: 80px; background-color: green; bottom: 200px; left: 80px; }
+        .circle9 { width: 180px; height: 180px; background-color: cyan; top: 400px; right: 200px; }
+
+        /* Main tagline */
+        .main-tagline {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Form container */
+        .container {
+            max-width: 600px;
+            margin: 100px auto 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Form styles */
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 33%;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #495057;
+            text-align: left;
+        }
+
+        input[type="number"], input[type="radio"] {
+            display: inline-block;
+            width: 66%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        .radio-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .radio-options label {
+            width: 45%;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3bb4ab;
+        }
+
+        .button1, .button2 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4ecdc4;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button1:hover, .button2:hover {
+            background-color: #3bb4ab;
+        }
+
+        .button1 {
+            position: absolute;
+            left: 20px;
+        }
+
+        .card {
+            width: 70%;
+            margin: 100px auto 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .button2 {
+            position: absolute;
+            right: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #495057;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .footer img {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #3bb4ab;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .radio-options label input[type="radio"]{
+            max-width: 15px;
+        }
+
+    </style>
 </head>
 <body>
+    <header class="header">
+        <a class="button1" href="{{ url_for('home') }}">Return</a>
+        <h1 class="title">Results</h1>
+    </header>
+<div class="result-container">
 
-    <h2>Estimated Time (In Minutes):</h2>
-    <p>{{ prediction  }} </p>
+</div>
+{#    <div class="container">#}
+{#        <h1>Time for Health Focus </h1>#}
+{#<p>We've noticed some areas that could use attention to get you feeling your best.</p>#}
+{##}
+{#<h3>Areas to Watch:</h3>#}
+{#<br>#}
+{##}
+{#<ul style="text-align: left; list-style-position: inside;">#}
+{#    <li>Some vital signs need attention</li>#}
+{#    <li>Activity levels could increase</li>#}
+{#    <li>Sleep patterns are irregular</li>#}
+{#    <li>Hydration could improve</li>#}
+{#    <li>Stress might be affecting your health</li>#}
+{#</ul>#}
+{##}
+{#<p>Let's work on these together! </p>#}
+{#    </div>#}
+{##}
+{#    <div class="container">#}
+{#        <h1>Quick Health Boosters</h1>#}
+{#        <h2>Reminders :</h2>#}
+{#        <br>#}
+{#        <ul style="text-align: left; list-style-position: inside;">#}
+{#            <li>8 glasses of water daily</li>#}
+{#            <li>Daily stretching</li>#}
+{#            <li>7-8 hours sleep</li>#}
+{#            <li>Regular meals</li>#}
+{#            <li>Daily stretching</li>#}
+{##}
+{#        </ul>#}
+{#        <h2>Hidden Health Gems:</h2>#}
+{#        <br>#}
+{#        <ul style="text-align: left; list-style-position: inside;">#}
+{#        <li>Morning sunlight for natural cortisol regulation</li>#}
+{#        <li>20-20-20 rule: Every 20 minutes, look 20 feet away for 20 seconds</li>#}
+{#        <li>Eat fermented foods for gut health</li>#}
+{#        <li>"Rainbow plate" challenge - eat colorful foods daily</li>#}
+{#        <li>Desk posture check every hour</li>#}
+{#        <li>2-minute breathing breaks between tasks</li>#}
+{#        <li>Hand exercises for better circulation</li>#}
+{#    </ul>#}
+{#    <h2>Body Maintenance Secrets </h2>#}
+{#    <br>#}
+{#    <h3>Lesser-Known Daily Habits:</h3>#}
+{#    <br>#}
+{#    <ul style="text-align: left; list-style-position: inside;">#}
+{#    <li>Face exercises while at desk</li>#}
+{#    <li>Ankle rotations during calls</li>#}
+{#    <li>Shoulder blade squeezes in traffic</li>#}
+{#    <li>"Oil pulling" for oral health</li>#}
+{#    <li>Humming for vagus nerve stimulation</li>#}
+{#    <li>Toe spreading exercises</li>#}
+{#    <li>Standing on one leg while waiting in lines</li>#}
+{##}
+{##}
+{#    <h2>Smart Daily Choices </h2>#}
+{#    <ul style="text-align: left; list-style-position: inside;">#}
+{#        <li>Take stairs for 1-2 floors</li>#}
+{#        <li>Water before coffee</li>#}
+{#        <li>Stretch while waiting for microwave</li>#}
+{#        <li>Desktop at eye level</li>#}
+{#        <li>Phone calls while walking</li>#}
+{#        <li>Squeeze stress ball during meetings</li>#}
+{#        <li>Morning light stretches before phone check</li>#}
+{#   </ul>#}
+{#<br>#}
+{#<h2>Remember <br>#}
+{#    Your body is amazing at healing when given the right support. Small, consistent changes create lasting health!</h2>#}
+{#    <br>#}
+{##}
+{#        <p>Need specific advice? Our health buddy is here to chat!  </p><br></ul></div>#}
+
+
+    <footer class="footer">
+        <a href="{{ url_for('chatbot') }}"><img src="https://freesvg.org/img/1538298822.png" alt="chatbot"></a>
+    </footer>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+    <div class="circle circle6"></div>
+    <div class="circle circle7"></div>
+    <div class="circle circle8"></div>
+    <div class="circle circle9"></div>
+
 </body>
+<script>
+    const prediction = "{{ prediction1 }}";
+    console.log(prediction)
+    if (prediction === 'Yes') {
+        showYesResult();
+    } else if (prediction === 'No') {
+        showNoResult();
+    } else {
+        // Optional: handle unexpected values
+        console.warn("Unexpected prediction value:", prediction);
+    }
+    // Define separate functions for each scenario
+    function showYesResult() {
+        // Logic for when prediction is "Yes"
+        document.querySelector('.result-container').innerHTML = `
+                <div class="container">
+        <h1>Looking Good! </h1>
+
+<p>Fantastic news! Your health indicators show you're on a positive track.</p>
+
+<h3>What's Working Well:</h3>
+<br>
+
+<ul style="text-align: left; list-style-position: inside;">
+    <li>Vital signs are in optimal range</li>
+    <li>Regular activity patterns detected</li>
+    <li>Sleep cycle is consistent</li>
+    <li>Hydration levels look good</li>
+    <li>Stress indicators are balanced</li>
+</ul>
+
+<p>Keep up your healthy routine! </p>
+    </div>
+
+    <div class="container">
+        <h1>Quick Health Boosters </h1>
+        <h2>Reminders :</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>8 glasses of water daily</li>
+            <li>Daily stretching</li>
+            <li>7-8 hours sleep</li>
+            <li>Regular meals</li>
+        </ul>
+        <h2>Hidden Health Gems:</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+        <li>Eat fermented foods for gut health</li>
+        <li>2-minute breathing breaks between tasks</li>
+        <li>Standing on one leg while waiting in lines</li>
+    </ul>
+    <h2>Body Maintenance Secrets </h2>
+    <br>
+    <h3>Lesser-Known Daily Habits:</h3>
+    <br>
+    <ul style="text-align: left; list-style-position: inside;">
+    <li>Face exercises while at desk</li>
+    <li>Humming for vagus nerve stimulation</li>
+    <li>Morning sunlight for natural cortisol regulation</li>
+</ul>
+<br>
+
+<p>Need specific advice? Our health buddy is here to chat! </p><br>
+
+    </div>
+`;
+    }
+
+    function showNoResult() {
+        // Logic for when prediction is "No"
+        document.querySelector('.result-container').innerHTML = `
+                <div class="container">
+        <h1>Time for Health Focus </h1>
+<p>We've noticed some areas that could use attention to get you feeling your best.</p>
+
+<h3>Areas to Watch:</h3>
+<br>
+
+<ul style="text-align: left; list-style-position: inside;">
+    <li>Some vital signs need attention</li>
+    <li>Activity levels could increase</li>
+    <li>Sleep patterns are irregular</li>
+    <li>Hydration could improve</li>
+    <li>Stress might be affecting your health</li>
+</ul>
+
+<p>Let's work on these together! </p>
+    </div>
+
+    <div class="container">
+        <h1>Quick Health Boosters </h1>
+        <h2>Reminders :</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+            <li>8 glasses of water daily</li>
+            <li>Daily stretching</li>
+            <li>7-8 hours sleep</li>
+            <li>Regular meals</li>
+            <li>Daily stretching</li>
+
+        </ul>
+        <h2>Hidden Health Gems:</h2>
+        <br>
+        <ul style="text-align: left; list-style-position: inside;">
+        <li>Morning sunlight for natural cortisol regulation</li>
+        <li>20-20-20 rule: Every 20 mins, look 20 feet away for 20 seconds</li>
+        <li>Eat fermented foods for gut health</li>
+        <li>"Rainbow plate" challenge - eat colorful foods daily</li>
+        <li>Desk posture check every hour</li>
+        <li>2-minute breathing breaks between tasks</li>
+        <li>Hand exercises for better circulation</li>
+    </ul>
+    <h2>Body Maintenance Secrets </h2>
+    <br>
+    <h3>Lesser-Known Daily Habits:</h3>
+    <br>
+    <ul style="text-align: left; list-style-position: inside;">
+    <li>Face exercises while at desk</li>
+    <li>Ankle rotations during calls</li>
+    <li>Shoulder blade squeezes in traffic</li>
+    <li>"Oil pulling" for oral health</li>
+    <li>Humming for vagus nerve stimulation</li>
+    <li>Toe spreading exercises</li>
+    <li>Standing on one leg while waiting in lines</li>
+
+
+    <h2>Smart Daily Choices</h2>
+    <ul style="text-align: left; list-style-position: inside;">
+        <li>Take stairs for 1-2 floors</li>
+        <li>Water before coffee</li>
+        <li>Stretch while waiting for microwave</li>
+        <li>Desktop at eye level</li>
+        <li>Phone calls while walking</li>
+        <li>Squeeze stress ball during meetings</li>
+        <li>Morning light stretches before phone check</li>
+</ul>
+<br>
+<h2>Remember <br>
+    Your body is amazing at healing when given the right support. Small, consistent changes create lasting health!</h2>
+    <br>
+
+<p>Need specific advice? Our health buddy is here to chat! </p><br>
+
+    </div>
+        `;
+    }
+
+    // Check prediction and execute the appropriate function
+
+</script>
+
 </html>
