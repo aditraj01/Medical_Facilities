@@ -249,18 +249,18 @@
     <!-- Header -->
     <header class="header">
         <a class="button1" href="{{ url_for('home') }}">Return</a>
-        <h1 class="title">EMPLOYEE</h1>
+        <h1 class="title">EMPLOYER</h1>
     </header>
     <!-- Health Manager Form -->
     <div class="card">
-        <div class="main-tagline">Health Manager</div>
+        <div class="main-tagline">Stress Survey Form</div>
         <form method="post" action="/mental">
             <div class="input">
-                <label for="feature0">Age</label>
+                <label>Age</label>
                 <input type="number" id="feature0" name="feature0" placeholder="Enter your age">
             </div>
             <div class="radio-options">
-                <label for="feature1">Gender:</label>
+                <label>Gender:</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature1" name="feature1" value="0"> Female</label>
                 <label><input type="radio" id="feature1" name="feature1" value="1"> Male</label>
@@ -269,7 +269,7 @@
 
             <!-- Self Employed -->
             <div class="radio-options">
-                <label for="feature2">Self Employed:</label>
+                <label>Self Employed:</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature2" name="feature2" value="0"> No</label>
                 <label><input type="radio" id="feature2" name="feature2" value="1"> Yes</label>
@@ -277,7 +277,7 @@
 
             <!-- Family History -->
             <div class="radio-options">
-                <label for="feature3">Family History of Mental Health Issues:</label>
+                <label>Family History of Mental Health Issues:</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature3" name="feature3" value="0"> No</label>
                 <label><input type="radio" id="feature3" name="feature3" value="1"> Yes</label>
@@ -285,7 +285,7 @@
 
             <!-- Work Interfere -->
             <div class="radio-options">
-                <label for="feature5">How Often Does Mental Health Interfere with Work:</label>
+                <label>How Often Does Mental Health Interfere with Work:</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature5" name="feature5" value="0"> Don't know</label>
                 <label><input type="radio" id="feature5" name="feature5" value="1"> Never</label>
@@ -297,7 +297,7 @@
 
             <!-- Number of Employees -->
             <div class="radio-options">
-                <label for="feature6">Number of Employees at Workplace:</label>
+                <label>Number of Employees at Workplace:</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature6" name="feature6" value="0"> 1-5</label>
                 <label><input type="radio" id="feature6" name="feature6" value="4"> 6-25</label>
@@ -310,7 +310,7 @@
 
             <!-- Remote Work -->
             <div class="radio-options">
-                <label for="feature7">Do You Work Remotely?</label>
+                <label>Do You Work Remotely?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature7" name="feature7" value="0"> No</label>
                 <label><input type="radio" id="feature7" name="feature7" value="1"> Yes</label>
@@ -319,7 +319,7 @@
 
             <!-- Tech Company -->
             <div class="radio-options">
-                <label for="feature8">Do You Work at a Tech Company?</label>
+                <label>Do You Work at a Tech Company?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature8" name="feature8" value="0"> No</label>
                 <label><input type="radio" id="feature8" name="feature8" value="1"> Yes</label>
@@ -328,7 +328,7 @@
 
             <!-- Benefits -->
             <div class="radio-options">
-                <label for="feature9">Are There Mental Health Benefits at Your Workplace?</label>
+                <label>Are There Mental Health Benefits at Your Workplace?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature9" name="feature9" value="0"> Don't know</label>
                 <label><input type="radio" id="feature9" name="feature9" value="1"> No</label>
@@ -338,7 +338,7 @@
 
             <!-- Care Options -->
             <div class="radio-options">
-                <label for="feature10">Are Mental Health Care Options Available?</label>
+                <label>Are Mental Health Care Options Available?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature10" name="feature10" value="0"> No</label>
                 <label><input type="radio" id="feature10" name="feature10" value="1"> Not sure</label>
@@ -348,7 +348,7 @@
 
             <!-- Wellness Program -->
             <div class="radio-options">
-                <label for="feature11">Does the Company Offer a Wellness Program?</label>
+                <label>Does the Company Offer a Wellness Program?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature11" name="feature11" value="0"> Don't know</label>
                 <label><input type="radio" id="feature11" name="feature11" value="1"> No</label>
@@ -358,7 +358,7 @@
 
             <!-- Seek Help -->
             <div class="radio-options">
-                <label for="feature12">Is There an Initiative to Seek Mental Health Help?</label>
+                <label>Is There an Initiative to Seek Mental Health Help?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature12" name="feature12" value="0"> Don't know</label>
                 <label><input type="radio" id="feature12" name="feature12" value="1"> No</label>
@@ -368,7 +368,7 @@
 
             <!-- Anonymity -->
             <div class="radio-options">
-                <label for="feature13">Are Mental Health Discussions Anonymous?</label>
+                <label>Are Mental Health Discussions Anonymous?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature13" name="feature13" value="0"> Don't know</label>
                 <label><input type="radio" id="feature13" name="feature13" value="1"> No</label>
@@ -376,17 +376,17 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature14">How Easy Is It To Take Medical Leaves</label>
+                <label>How Easy Is It To Take Medical Leaves</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature14" name="feature14" value="0"> Don't know</label>
                 <label><input type="radio" id="feature14" name="feature14" value="1"> Somewhat Difficult</label>
                 <label><input type="radio" id="feature14" name="feature14" value="2"> Somewhat Easy</label>
-                    <label><input type="radio" id="feature14" name="feature14" value="3"> Very Difficult</label>
-                    <label><input type="radio" id="feature14" name="feature14" value="4"> Very Easy</label>
+                <label><input type="radio" id="feature14" name="feature14" value="3"> Very Difficult</label>
+                <label><input type="radio" id="feature14" name="feature14" value="4"> Very Easy</label>
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature15">Do You Think Discussing Mental Health Issue Employer Would Have Negative Consequences? </label>
+                <label>Do You Think Discussing Mental Health Issue Employer Would Have Negative Consequences? </label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature15" name="feature15" value="0"> Maybe</label>
                 <label><input type="radio" id="feature15" name="feature15" value="1"> No</label>
@@ -394,7 +394,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature16">Do You Think Discussing Physical Health Issue Employer Would Have Negative Consequences?</label>
+                <label>Do You Think Discussing Physical Health Issue Employer Would Have Negative Consequences?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature16" name="feature16" value="0"> Maybe</label>
                 <label><input type="radio" id="feature16" name="feature16" value="1"> No</label>
@@ -402,7 +402,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature17">Would You Be Willing To Discuss A Mental Health Issue With Your Co-Workers?</label>
+                <label>Would You Be Willing To Discuss A Mental Health Issue With Your Co-Workers?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature17" name="feature17" value="0"> No</label>
                 <label><input type="radio" id="feature17" name="feature17" value="1"> Some Of Them</label>
@@ -410,7 +410,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature18">Would You Be Willing To Discuss A Mental Health Issue With Your Supervisors?</label>
+                <label>Would You Be Willing To Discuss A Mental Health Issue With Your Supervisors?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature18" name="feature18" value="0"> No</label>
                 <label><input type="radio" id="feature18" name="feature18" value="1"> Some Of Them</label>
@@ -418,7 +418,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature19">Would You Bring The Need Of Mental Health With Employer?</label>
+                <label>Would You Bring The Need Of Mental Health With Employer?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature19" name="feature19" value="0"> Don't know</label>
                 <label><input type="radio" id="feature19" name="feature19" value="1"> No</label>
@@ -426,7 +426,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature20">Would You Bring The Need Of Physical Health With Employer?</label>
+                <label>Would You Bring The Need Of Physical Health With Employer?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature20" name="feature20" value="0"> Don't know</label>
                 <label><input type="radio" id="feature20" name="feature20" value="1"> No</label>
@@ -434,7 +434,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature21">Do You Take Mental Health As Serious As Physical Health?</label>
+                <label>Do You Take Mental Health As Serious As Physical Health?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature21" name="feature21" value="0"> Maybe</label>
                 <label><input type="radio" id="feature21" name="feature21" value="1"> No</label>
@@ -442,7 +442,7 @@
                 </div>
             </div>
             <div class="radio-options">
-                <label for="feature22">Aware About Consequences Of Mental Illness ?</label>
+                <label>Aware About Consequences Of Mental Illness ?</label>
                 <div class="radio-group">
                 <label><input type="radio" id="feature22" name="feature22" value="0"> No</label>
                 <label><input type="radio" id="feature22" name="feature22" value="1"> Yes</label>

@@ -221,6 +221,12 @@
         .radio-options label input[type="radio"]{
             max-width: 15px;
         }
+        .pos-res{
+            color: green;
+        }
+        .neg-res{
+            color: red;
+        }
 
     </style>
 </head>
@@ -232,79 +238,6 @@
     <div class="result-container">
 
     </div>
-{#    <div class="container">#}
-{#        <h1>Time for Health Focus </h1>#}
-{#<p>We've noticed some areas that could use attention to get you feeling your best.</p>#}
-{##}
-{#<h3>Areas to Watch:</h3>#}
-{#<br>#}
-{##}
-{#<ul style="text-align: left; list-style-position: inside;">#}
-{#    <li>Some vital signs need attention</li>#}
-{#    <li>Activity levels could increase</li>#}
-{#    <li>Sleep patterns are irregular</li>#}
-{#    <li>Hydration could improve</li>#}
-{#    <li>Stress might be affecting your health</li>#}
-{#</ul>#}
-{##}
-{#<p>Let's work on these together! </p>#}
-{#    </div>#}
-{##}
-{#    <div class="container">#}
-{#        <h1>Quick Health Boosters</h1>#}
-{#        <h2>Reminders :</h2>#}
-{#        <br>#}
-{#        <ul style="text-align: left; list-style-position: inside;">#}
-{#            <li>8 glasses of water daily</li>#}
-{#            <li>Daily stretching</li>#}
-{#            <li>7-8 hours sleep</li>#}
-{#            <li>Regular meals</li>#}
-{#            <li>Daily stretching</li>#}
-{##}
-{#        </ul>#}
-{#        <h2>Hidden Health Gems:</h2>#}
-{#        <br>#}
-{#        <ul style="text-align: left; list-style-position: inside;">#}
-{#        <li>Morning sunlight for natural cortisol regulation</li>#}
-{#        <li>20-20-20 rule: Every 20 minutes, look 20 feet away for 20 seconds</li>#}
-{#        <li>Eat fermented foods for gut health</li>#}
-{#        <li>"Rainbow plate" challenge - eat colorful foods daily</li>#}
-{#        <li>Desk posture check every hour</li>#}
-{#        <li>2-minute breathing breaks between tasks</li>#}
-{#        <li>Hand exercises for better circulation</li>#}
-{#    </ul>#}
-{#    <h2>Body Maintenance Secrets </h2>#}
-{#    <br>#}
-{#    <h3>Lesser-Known Daily Habits:</h3>#}
-{#    <br>#}
-{#    <ul style="text-align: left; list-style-position: inside;">#}
-{#    <li>Face exercises while at desk</li>#}
-{#    <li>Ankle rotations during calls</li>#}
-{#    <li>Shoulder blade squeezes in traffic</li>#}
-{#    <li>"Oil pulling" for oral health</li>#}
-{#    <li>Humming for vagus nerve stimulation</li>#}
-{#    <li>Toe spreading exercises</li>#}
-{#    <li>Standing on one leg while waiting in lines</li>#}
-{##}
-{##}
-{#    <h2>Smart Daily Choices </h2>#}
-{#    <ul style="text-align: left; list-style-position: inside;">#}
-{#        <li>Take stairs for 1-2 floors</li>#}
-{#        <li>Water before coffee</li>#}
-{#        <li>Stretch while waiting for microwave</li>#}
-{#        <li>Desktop at eye level</li>#}
-{#        <li>Phone calls while walking</li>#}
-{#        <li>Squeeze stress ball during meetings</li>#}
-{#        <li>Morning light stretches before phone check</li>#}
-{#   </ul>#}
-{#<br>#}
-{#<h2>Remember <br>#}
-{#    Your body is amazing at healing when given the right support. Small, consistent changes create lasting health!</h2>#}
-{#    <br>#}
-{##}
-{#        <p>Need specific advice? Our health buddy is here to chat!  </p><br></ul></div>#}
-
-
     <footer class="footer">
         <a href="{{ url_for('chatbot') }}"><img src="https://freesvg.org/img/1538298822.png" alt="chatbot"></a>
     </footer>
@@ -337,7 +270,7 @@
                 <div class="container">
         <h1>Looking Good! </h1>
 
-<p>Fantastic news! Your health indicators show you're on a positive track.</p>
+<p class="pos-res">Fantastic news! Your health indicators show you're on a positive track.</p>
 
 <h3>What's Working Well:</h3>
 <br>
@@ -392,7 +325,7 @@
         document.querySelector('.result-container').innerHTML = `
                 <div class="container">
         <h1>Time for Health Focus </h1>
-<p>We've noticed some areas that could use attention to get you feeling your best.</p>
+<p class="neg-res">We've noticed some areas that could use attention to get you feeling your best.</p>
 
 <h3>Areas to Watch:</h3>
 <br>
